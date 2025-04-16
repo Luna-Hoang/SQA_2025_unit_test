@@ -1,0 +1,87 @@
+[
+  {
+    "stage": "Initial State",
+    "students_count": 0,
+    "students": [],
+    "users_count": 0,
+    "users": []
+  },
+  {
+    "stage": "After Setup",
+    "students_count": 0,
+    "students": [],
+    "users_count": 1,
+    "users": [
+      {
+        "id": 5,
+        "username": "teststudent"
+      }
+    ]
+  },
+  {
+    "stage": "Before Update Test",
+    "students_count": 0,
+    "students": [],
+    "users_count": 1,
+    "users": [
+      {
+        "id": 5,
+        "username": "teststudent"
+      }
+    ]
+  },
+  {
+    "stage": "After Student Creation",
+    "students_count": 1,
+    "students": [
+      {
+        "id": 3,
+        "gender": "Male",
+        "address": "Test Address"
+      }
+    ],
+    "users_count": 1,
+    "users": [
+      {
+        "id": 5,
+        "username": "teststudent"
+      }
+    ]
+  },
+  {
+    "stage": "After Student Update",
+    "students_count": 1,
+    "students": [
+      {
+        "id": 3,
+        "gender": "Female",
+        "address": "Updated Address"
+      }
+    ],
+    "users_count": 1,
+    "users": [
+      {
+        "id": 5,
+        "username": "teststudent"
+      }
+    ]
+  },
+  {
+    "stage": "Final State",
+    "students_count": 1,
+    "students": [
+      {
+        "id": 3,
+        "gender": "Female",
+        "address": "Updated Address"
+      }
+    ],
+    "users_count": 1,
+    "users": [
+      {
+        "id": 5,
+        "username": "teststudent"
+      }
+    ]
+  }
+]

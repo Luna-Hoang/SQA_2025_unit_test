@@ -1,0 +1,1064 @@
+ERROR DETECTION TEST REPORT - SESSION - DATE: 06/04/2025 21:40:24
+####################################################################################################
+
+PURPOSE: These tests are designed to detect errors in the original software,
+         NOT to add new validations. Each test will check the actual behavior
+         of the software when faced with different input situations.
+
+####################################################################################################
+
+
+****************************************************************************************************
+
+🔍 TEST E1: SUCCESSFUL SESSION CREATION WITH START DATE AT LOWER BOUNDARY
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating session with:
+  - Start Date: 2025-05-01
+  - End Date: 2027-03-01
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 116, Start: 2025-05-01, End: 2027-03-01
+
+================================================================================
+
+
+✅ TEST RESULT: SUCCESS
+  - Session created with ID: 116
+  - Start Date: 2025-05-01
+  - End Date: 2027-03-01
+
+
+****************************************************************************************************
+
+🔍 TEST E2: SESSION CREATION WITH START DATE BELOW LOWER BOUNDARY
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create session with:
+  - Start Date: 2025-04-30
+  - End Date: 2027-03-01
+
+✅ TEST RESULT: SUCCESS — Creation failed as expected.
+  - Error: ❌ TEST RESULT: FAILURE — Session should not be created with start date below lower boundary.
+
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 117, Start: 2025-04-30, End: 2027-03-01
+
+================================================================================
+
+
+****************************************************************************************************
+
+🔍 TEST E3: SESSION CREATION WITH START DATE ABOVE LOWER BOUNDARY
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating session with:
+  - Start Date: 2025-05-02
+  - End Date: 2027-03-01
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 118, Start: 2025-05-02, End: 2027-03-01
+
+================================================================================
+
+
+✅ TEST RESULT: SUCCESS
+  - Session created with ID: 118
+  - Start Date: 2025-05-02
+  - End Date: 2027-03-01
+
+
+****************************************************************************************************
+
+🔍 TEST E4: SESSION CREATION WITH END DATE AT UPPER BOUNDARY
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating session with:
+  - Start Date: 2028-12-31
+  - End Date: 2030-12-31
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 119, Start: 2028-12-31, End: 2030-12-31
+
+================================================================================
+
+
+✅ TEST RESULT: SUCCESS
+  - Session created with ID: 119
+  - Start Date: 2028-12-31
+  - End Date: 2030-12-31
+
+
+****************************************************************************************************
+
+🔍 TEST E5: SESSION CREATION WITH END DATE JUST BELOW UPPER BOUNDARY
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating session with:
+  - Start Date: 2029-05-31
+  - End Date: 2030-12-30
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 120, Start: 2029-05-31, End: 2030-12-30
+
+================================================================================
+
+
+✅ TEST RESULT: SUCCESS
+  - Session created with ID: 120
+  - Start Date: 2029-05-31
+  - End Date: 2030-12-30
+
+
+****************************************************************************************************
+
+🔍 TEST E6: SESSION CREATION WITH END DATE ABOVE UPPER BOUNDARY
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create session with:
+  - Start Date: 2029-05-31
+  - End Date: 2031-01-01
+
+✅ TEST RESULT: SUCCESS — Creation failed as expected.
+  - Error: ❌ TEST RESULT: FAILURE — Session should not be created with end date above upper boundary.
+
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 121, Start: 2029-05-31, End: 2031-01-01
+
+================================================================================
+
+
+****************************************************************************************************
+
+🔍 TEST E7: SESSION CREATION WITH END DATE = START DATE + 2 YEARS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating session with:
+  - Start Date: 2025-05-01
+  - End Date: 2027-05-01
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 122, Start: 2025-05-01, End: 2027-05-01
+
+================================================================================
+
+
+✅ TEST RESULT: SUCCESS
+  - Session created with ID: 122
+  - Start Date: 2025-05-01
+  - End Date: 2027-05-01
+
+
+****************************************************************************************************
+
+🔍 TEST E8: SESSION CREATION WITH END DATE = START DATE + 2 YEARS + 1 DAY
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create session with:
+  - Start Date: 2025-05-01
+  - End Date: 2027-05-02
+
+✅ TEST RESULT: SUCCESS — Creation failed as expected.
+  - Error: ❌ TEST RESULT: FAILURE — Session should not be created when end date exceeds 2 years from start.
+
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 123, Start: 2025-05-01, End: 2027-05-02
+
+================================================================================
+
+
+****************************************************************************************************
+
+🔍 TEST E9: SESSION CREATION WITH END DATE = START DATE + 2 YEARS - 1 DAY
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating session with:
+  - Start Date: 2025-05-01
+  - End Date: 2027-04-30
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 124, Start: 2025-05-01, End: 2027-04-30
+
+================================================================================
+
+
+✅ TEST RESULT: SUCCESS
+  - Session created with ID: 124
+  - Start Date: 2025-05-01
+  - End Date: 2027-04-30
+
+
+****************************************************************************************************
+
+🔍 TEST E10: SESSION CREATION WITH END DATE EQUAL TO START DATE (LOWER BOUNDARY)
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create session with:
+  - Start Date: 2025-05-01
+  - End Date: 2025-05-01
+
+✅ TEST RESULT: SUCCESS — Creation failed as expected.
+  - Error: ❌ TEST RESULT: FAILURE — Session should not be created when end date equals start date.
+
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 125, Start: 2025-05-01, End: 2025-05-01
+
+================================================================================
+
+
+****************************************************************************************************
+
+🔍 TEST E11: SESSION CREATION WITH END DATE EQUAL TO START DATE (UPPER BOUNDARY)
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create session with:
+  - Start Date: 2030-12-31
+  - End Date: 2030-12-31
+
+✅ TEST RESULT: SUCCESS — Creation failed as expected.
+  - Error: ❌ TEST RESULT: FAILURE — Session should not be created when end date equals start date at upper boundary.
+
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 126, Start: 2030-12-31, End: 2030-12-31
+
+================================================================================
+
+
+****************************************************************************************************
+
+🔍 TEST E12: SESSION CREATION WITH END DATE BEFORE START DATE (LOWER BOUNDARY)
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create session with:
+  - Start Date: 2025-05-01
+  - End Date: 2025-04-30
+
+✅ TEST RESULT: SUCCESS — Creation failed as expected.
+  - Error: ❌ TEST RESULT: FAILURE — Session should not be created when end date is before start date.
+
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 127, Start: 2025-05-01, End: 2025-04-30
+
+================================================================================
+
+
+****************************************************************************************************
+
+🔍 TEST E13: SESSION CREATION WITH END DATE = START DATE + 1 DAY (LOWER BOUNDARY)
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating session with:
+  - Start Date: 2025-05-01
+  - End Date: 2025-05-02
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 128, Start: 2025-05-01, End: 2025-05-02
+
+================================================================================
+
+
+✅ TEST RESULT: SUCCESS
+  - Session created with ID: 128
+  - Start Date: 2025-05-01
+  - End Date: 2025-05-02
+
+
+****************************************************************************************************
+
+🔍 TEST E14: SESSION CREATION WITH END DATE BEFORE START DATE (UPPER BOUNDARY)
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create session with:
+  - Start Date: 2030-12-31
+  - End Date: 2030-12-30
+
+✅ TEST RESULT: SUCCESS — Creation failed as expected.
+  - Error: ❌ TEST RESULT: FAILURE — Session should not be created when end date is before start date at upper boundary.
+
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 129, Start: 2030-12-31, End: 2030-12-30
+
+================================================================================
+
+
+****************************************************************************************************
+
+🔍 TEST E15: SESSION CREATION WITH END DATE = START DATE + 1 DAY AT UPPER BOUNDARY
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create session with:
+  - Start Date: 2030-12-31
+  - End Date: 2031-01-01
+
+✅ TEST RESULT: SUCCESS — Creation failed as expected.
+  - Error: ❌ TEST RESULT: FAILURE — Session should not be created when end date exceeds upper boundary by 1 day.
+
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 130, Start: 2030-12-31, End: 2031-01-01
+
+================================================================================
+
+
+****************************************************************************************************
+
+🔍 TEST E16: SESSION CREATION WITH MISSING START DATE
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create session with missing start date:
+  - Start Date: None
+  - End Date: 2030-12-31
+
+✅ TEST RESULT: SUCCESS — Creation failed as expected.
+  - Error: NOT NULL constraint failed: student_management_app_sessionyearmodel.session_start_year
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+****************************************************************************************************
+
+🔍 TEST E17: SESSION CREATION WITH MISSING END DATE
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create session with missing end date:
+  - Start Date: 2025-05-01
+  - End Date: None
+
+✅ TEST RESULT: SUCCESS — Creation failed as expected.
+  - Error: NOT NULL constraint failed: student_management_app_sessionyearmodel.session_end_year
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+****************************************************************************************************
+
+🔍 TEST E18: SESSION CREATION WITH WRONG DATE FORMAT (SLASHES)
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create session with wrong date format (slashes):
+  - Start Date: 2025/01/01
+  - End Date: 2027/01/01
+
+✅ TEST RESULT: SUCCESS — Creation failed as expected.
+  - Error: ['“2025/01/01” value has an invalid date format. It must be in YYYY-MM-DD format.']
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+****************************************************************************************************
+
+🔍 TEST E19: SESSION CREATION WITH WRONG DATE FORMAT (DD-MM-YYYY)
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create session with wrong date format (DD-MM-YYYY):
+  - Start Date: 31-08-2024
+  - End Date: 01-07-2026
+
+✅ TEST RESULT: SUCCESS — Creation failed as expected.
+  - Error: ['“31-08-2024” value has an invalid date format. It must be in YYYY-MM-DD format.']
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Session Creation)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+****************************************************************************************************
+
+🔍 TEST E20: DUPLICATE SESSION CREATION WITH SAME DATES
+****************************************************************************************************
+
+
+📌 Creating initial session with:
+  - Start Date: 2025-05-01
+  - End Date: 2027-03-01
+
+✅ Initial session created with ID: 131
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Duplicate Session Creation)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 131, Start: 2025-05-01, End: 2027-03-01
+
+================================================================================
+
+
+📌 Attempting to create duplicate session with same dates:
+  - Start Date: 2025-05-01
+  - End Date: 2027-03-01
+
+✅ TEST RESULT: SUCCESS — Duplicate creation failed as expected.
+  - Error: ❌ TEST RESULT: FAILURE — Duplicate session should not be created.
+
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Duplicate Session Creation)
+
+  📋 Number of Sessions: 2
+
+  📝 Details:
+    - ID: 131, Start: 2025-05-01, End: 2027-03-01
+    - ID: 132, Start: 2025-05-01, End: 2027-03-01
+
+================================================================================
+
+
+
+====================================================================================================
+TEST RESULTS SUMMARY
+====================================================================================================
+
+✅ COMPLETED: start date is exactly at lower boundary
+✅ COMPLETED: start date = lower boundary -1 day
+✅ COMPLETED: start date = lower boundary +1 day
+✅ COMPLETED: end date is exactly at upper boundary
+✅ COMPLETED: end date = upper boundary -1 day
+✅ COMPLETED: end date = upper boundary +1 day
+✅ COMPLETED: end date = start date + 2 years
+✅ COMPLETED: end date = start date + 2 years +1 day
+✅ COMPLETED: end date = start date + 2 years -1 day
+✅ COMPLETED: end date = start date at lower boundary
+✅ COMPLETED: end date = start date at upper boundary
+✅ COMPLETED: end date = start date – 1 day at lower boundary
+✅ COMPLETED: end date = start date + 1 day at lower boundary
+✅ COMPLETED: end date = start date – 1 day at upper boundary
+✅ COMPLETED: end date = start date + 1 day at upper boundary
+✅ COMPLETED: missing start date
+✅ COMPLETED: missing end date
+✅ COMPLETED: wrong format with slashes
+✅ COMPLETED: wrong format with DD-MM-YYYY
+✅ COMPLETED: start_date and end_date are duplicated
+
+====================================================================================================
+END OF TEST REPORT

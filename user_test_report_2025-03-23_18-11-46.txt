@@ -1,0 +1,617 @@
+ERROR DETECTION TEST REPORT - USER - DATE: 23/03/2025 18:11:46
+####################################################################################################
+
+PURPOSE: These tests are designed to detect errors in the original software,
+         NOT to add new validations. Each test will check the actual behavior
+         of the software when faced with different input situations.
+
+####################################################################################################
+
+
+
+####################################################################################################
+### TEST: Successfully create a new user
+####################################################################################################
+
+
+
+****************************************************************************************************
+
+🔍 TEST 1: SUCCESSFUL USER CREATION
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Users: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before User Creation)
+
+  📋 Number of Users: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating user with:
+  - Username: studenttest1
+  - Email: student1@test.com
+  - Password: complexpassword123
+  - Name: Student One
+  - Role: Student (user_type=3)
+
+
+================================================================================
+
+  📊 AFTER CREATION (After User Creation)
+
+  📋 Number of Users: 1
+
+  📝 Details:
+    - ID: 118, Username: studenttest1, Email: student1@test.com, Role: Student, Name: Student One
+
+================================================================================
+
+
+✅ TEST RESULT: SUCCESS
+  - User created with ID: 118
+  - Username: studenttest1
+  - Email: student1@test.com
+  - Role: 3
+
+
+####################################################################################################
+### TEST: User creation with duplicate email
+####################################################################################################
+
+
+
+****************************************************************************************************
+
+🔍 TEST 2: DUPLICATE EMAIL
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Users: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating first user with:
+  - Username: studenttest2
+  - Email: student2@test.com
+  - Password: complexpassword123
+  - Role: Student (user_type=3)
+
+
+================================================================================
+
+  📊 AFTER FIRST USER CREATION (After First User Creation)
+
+  📋 Number of Users: 1
+
+  📝 Details:
+    - ID: 119, Username: studenttest2, Email: student2@test.com, Role: Student, Name: First Student
+
+================================================================================
+
+
+📌 Attempting to create second user with:
+  - Username: studenttest2_duplicate
+  - Email: student2@test.com (same as first user)
+  - Password: anotherpassword123
+  - Role: Student (user_type=3)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with duplicate email
+
+================================================================================
+
+  📊 AFTER ATTEMPTING DUPLICATE EMAIL CREATION (After Attempting Duplicate Email Creation)
+
+  📋 Number of Users: 2
+
+  📝 Details:
+    - ID: 119, Username: studenttest2, Email: student2@test.com, Role: Student, Name: First Student
+    - ID: 120, Username: studenttest2_duplicate, Email: student2@test.com, Role: Student, Name: Second Student
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Software allows creating user with duplicate email
+
+❌ ERROR DURING TEST: Software does not check for duplicate emails!
+
+
+
+####################################################################################################
+### TEST: User creation with missing password
+####################################################################################################
+
+
+
+****************************************************************************************************
+
+🔍 TEST 3: MISSING PASSWORD
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Users: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATING MISSING PASSWORD (Before Creating User with Missing Password)
+
+  📋 Number of Users: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create user with missing password:
+  - Username: studenttest3
+  - Email: student3@test.com
+  - Password: NOT PROVIDED (missing)
+  - Role: Student (user_type=3)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with password None
+
+================================================================================
+
+  📊 AFTER ATTEMPTING PASSWORD NONE (After Attempting User Creation with Password None)
+
+  📋 Number of Users: 1
+
+  📝 Details:
+    - ID: 121, Username: studenttest3, Email: student3@test.com, Role: Student, Name: Test Student3
+
+================================================================================
+
+
+⚠️ ERROR DETECTED: Software allows creating user with empty password
+
+================================================================================
+
+  📊 AFTER ATTEMPTING EMPTY PASSWORD (After Attempting User Creation with Empty Password)
+
+  📋 Number of Users: 2
+
+  📝 Details:
+    - ID: 121, Username: studenttest3, Email: student3@test.com, Role: Student, Name: Test Student3
+    - ID: 122, Username: studenttest3_2, Email: student3_2@test.com, Role: Student, Name: Test Student3_2
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Software allows creating user with missing password
+
+❌ ERROR DURING TEST: Software does not check for missing password!
+
+
+
+####################################################################################################
+### TEST: User creation with invalid role
+####################################################################################################
+
+
+
+****************************************************************************************************
+
+🔍 TEST 4: INVALID ROLE
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Users: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATING INVALID ROLE (Before Creating User with Invalid Role)
+
+  📋 Number of Users: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 1. Attempting to create user with invalid role:
+  - Username: invalidrole0
+  - Email: invalid0@test.com
+  - Role: 0 (invalid, only accepts 1, 2, 3)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with role=0
+
+📌 2. Attempting to create user with invalid role:
+  - Username: invalidrole1
+  - Email: invalid1@test.com
+  - Role: 4 (invalid, only accepts 1, 2, 3)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with role=4
+
+📌 3. Attempting to create user with invalid role:
+  - Username: invalidrole2
+  - Email: invalid2@test.com
+  - Role: -1 (invalid, only accepts 1, 2, 3)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with role=-1
+
+📌 4. Attempting to create user with invalid role:
+  - Username: invalidrole3
+  - Email: invalid3@test.com
+  - Role: A (invalid, only accepts 1, 2, 3)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with role=A
+
+📌 5. Attempting to create user with invalid role:
+  - Username: invalidrole4
+  - Email: invalid4@test.com
+  - Role: None (invalid, only accepts 1, 2, 3)
+
+
+✅ Software caught error when creating user with role=None: NOT NULL constraint failed: student_management_app_customuser.user_type
+
+================================================================================
+
+  📊 AFTER ATTEMPTING INVALID ROLE (After Attempting to Create Users with Invalid Role)
+
+  📋 Number of Users: 4
+
+  📝 Details:
+    - ID: 123, Username: invalidrole0, Email: invalid0@test.com, Role: Unknown (0), Name: Test Role0
+    - ID: 124, Username: invalidrole1, Email: invalid1@test.com, Role: Unknown (4), Name: Test Role1
+    - ID: 125, Username: invalidrole2, Email: invalid2@test.com, Role: Unknown (-1), Name: Test Role2
+    - ID: 126, Username: invalidrole3, Email: invalid3@test.com, Role: Unknown (A), Name: Test Role3
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Software allows creating user with some invalid roles
+  - Role 0: Software allows creating user
+  - Role 4: Software allows creating user
+  - Role -1: Software allows creating user
+  - Role A: Software allows creating user
+  - Role None: Error caught: NOT NULL constraint failed: student_management_app_customuser.user_type
+
+❌ ERROR DURING TEST: Software does not check for all invalid roles!
+
+
+
+####################################################################################################
+### TEST: User creation with invalid email format
+####################################################################################################
+
+
+
+****************************************************************************************************
+
+🔍 TEST 5: INVALID EMAIL FORMAT
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Users: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATING INVALID EMAIL (Before Creating User with Invalid Email)
+
+  📋 Number of Users: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 1. Attempting to create user with invalid email:
+  - Username: invalidemail0
+  - Email: plainaddress (improper format example@domain.com)
+
+✓ Django EmailValidator rejects email: plainaddress
+
+⚠️ ERROR DETECTED: Software allows creating user with invalid email: plainaddress
+
+📌 2. Attempting to create user with invalid email:
+  - Username: invalidemail1
+  - Email: #@%^%#$@#$@#.com (improper format example@domain.com)
+
+✓ Django EmailValidator rejects email: #@%^%#$@#$@#.com
+
+⚠️ ERROR DETECTED: Software allows creating user with invalid email: #@%^%#$@#$@#.com
+
+📌 3. Attempting to create user with invalid email:
+  - Username: invalidemail2
+  - Email: @domain.com (improper format example@domain.com)
+
+✓ Django EmailValidator rejects email: @domain.com
+
+⚠️ ERROR DETECTED: Software allows creating user with invalid email: @domain.com
+
+📌 4. Attempting to create user with invalid email:
+  - Username: invalidemail3
+  - Email: Joe Smith <email@domain.com> (improper format example@domain.com)
+
+✓ Django EmailValidator rejects email: Joe Smith <email@domain.com>
+
+⚠️ ERROR DETECTED: Software allows creating user with invalid email: Joe Smith <email@domain.com>
+
+📌 5. Attempting to create user with invalid email:
+  - Username: invalidemail4
+  - Email: email.domain.com (improper format example@domain.com)
+
+✓ Django EmailValidator rejects email: email.domain.com
+
+⚠️ ERROR DETECTED: Software allows creating user with invalid email: email.domain.com
+
+📌 6. Attempting to create user with invalid email:
+  - Username: invalidemail5
+  - Email: email@domain@domain.com (improper format example@domain.com)
+
+✓ Django EmailValidator rejects email: email@domain@domain.com
+
+⚠️ ERROR DETECTED: Software allows creating user with invalid email: email@domain@domain.com
+
+📌 7. Attempting to create user with invalid email:
+  - Username: invalidemail6
+  - Email: .email@domain.com (improper format example@domain.com)
+
+✓ Django EmailValidator rejects email: .email@domain.com
+
+⚠️ ERROR DETECTED: Software allows creating user with invalid email: .email@domain.com
+
+📌 8. Attempting to create user with invalid email:
+  - Username: invalidemail7
+  - Email: email.@domain.com (improper format example@domain.com)
+
+✓ Django EmailValidator rejects email: email.@domain.com
+
+⚠️ ERROR DETECTED: Software allows creating user with invalid email: email.@domain.com
+
+📌 9. Attempting to create user with invalid email:
+  - Username: invalidemail8
+  - Email: email@domain.com. (improper format example@domain.com)
+
+✓ Django EmailValidator rejects email: email@domain.com.
+
+⚠️ ERROR DETECTED: Software allows creating user with invalid email: email@domain.com.
+
+📌 10. Attempting to create user with invalid email:
+  - Username: invalidemail9
+  - Email: email@domain (improper format example@domain.com)
+
+✓ Django EmailValidator rejects email: email@domain
+
+⚠️ ERROR DETECTED: Software allows creating user with invalid email: email@domain
+
+================================================================================
+
+  📊 AFTER ATTEMPTING INVALID EMAIL (After Attempting to Create Users with Invalid Email)
+
+  📋 Number of Users: 10
+
+  📝 Details:
+    - ID: 127, Username: invalidemail0, Email: plainaddress, Role: Student, Name: Test Email0
+    - ID: 128, Username: invalidemail1, Email: #@%^%#$@#$@#.com, Role: Student, Name: Test Email1
+    - ID: 129, Username: invalidemail2, Email: @domain.com, Role: Student, Name: Test Email2
+    - ID: 130, Username: invalidemail3, Email: Joe Smith <email@domain.com>, Role: Student, Name: Test Email3
+    - ID: 131, Username: invalidemail4, Email: email.domain.com, Role: Student, Name: Test Email4
+    - ID: 132, Username: invalidemail5, Email: email@domain@domain.com, Role: Student, Name: Test Email5
+    - ID: 133, Username: invalidemail6, Email: .email@domain.com, Role: Student, Name: Test Email6
+    - ID: 134, Username: invalidemail7, Email: email.@domain.com, Role: Student, Name: Test Email7
+    - ID: 135, Username: invalidemail8, Email: email@domain.com., Role: Student, Name: Test Email8
+    - ID: 136, Username: invalidemail9, Email: email@domain, Role: Student, Name: Test Email9
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Software allows creating user with some invalid emails
+  - Email 'plainaddress': Software allows creating user
+  - Email '#@%^%#$@#$@#.com': Software allows creating user
+  - Email '@domain.com': Software allows creating user
+  - Email 'Joe Smith <email@domain.com>': Software allows creating user
+  - Email 'email.domain.com': Software allows creating user
+  - Email 'email@domain@domain.com': Software allows creating user
+  - Email '.email@domain.com': Software allows creating user
+  - Email 'email.@domain.com': Software allows creating user
+  - Email 'email@domain.com.': Software allows creating user
+  - Email 'email@domain': Software allows creating user
+
+❌ ERROR DURING TEST: Software does not check for all invalid emails!
+
+
+
+####################################################################################################
+### TEST: User creation with weak password
+####################################################################################################
+
+
+
+****************************************************************************************************
+
+🔍 TEST 6: PASSWORD TOO SHORT OR TOO WEAK
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Users: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATING WEAK PASSWORD (Before Creating User with Weak Password)
+
+  📋 Number of Users: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 1. Attempting to create user with weak password:
+  - Username: weakpassword0
+  - Email: weak0@test.com
+  - Password: 123 (too short/too weak)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with weak password: 123
+
+📌 2. Attempting to create user with weak password:
+  - Username: weakpassword1
+  - Email: weak1@test.com
+  - Password: password (too short/too weak)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with weak password: password
+
+📌 3. Attempting to create user with weak password:
+  - Username: weakpassword2
+  - Email: weak2@test.com
+  - Password: abc123 (too short/too weak)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with weak password: abc123
+
+📌 4. Attempting to create user with weak password:
+  - Username: weakpassword3
+  - Email: weak3@test.com
+  - Password: qwerty (too short/too weak)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with weak password: qwerty
+
+📌 5. Attempting to create user with weak password:
+  - Username: weakpassword4
+  - Email: weak4@test.com
+  - Password: a (too short/too weak)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with weak password: a
+
+📌 6. Attempting to create user with weak password:
+  - Username: weakpassword5
+  - Email: weak5@test.com
+  - Password: 12345678 (too short/too weak)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with weak password: 12345678
+
+📌 7. Attempting to create user with weak password:
+  - Username: weakpassword6
+  - Email: weak6@test.com
+  - Password: username (too short/too weak)
+
+
+⚠️ ERROR DETECTED: Software allows creating user with weak password: username
+
+================================================================================
+
+  📊 AFTER ATTEMPTING WEAK PASSWORD (After Attempting to Create Users with Weak Password)
+
+  📋 Number of Users: 7
+
+  📝 Details:
+    - ID: 137, Username: weakpassword0, Email: weak0@test.com, Role: Student, Name: Test Password0
+    - ID: 138, Username: weakpassword1, Email: weak1@test.com, Role: Student, Name: Test Password1
+    - ID: 139, Username: weakpassword2, Email: weak2@test.com, Role: Student, Name: Test Password2
+    - ID: 140, Username: weakpassword3, Email: weak3@test.com, Role: Student, Name: Test Password3
+    - ID: 141, Username: weakpassword4, Email: weak4@test.com, Role: Student, Name: Test Password4
+    - ID: 142, Username: weakpassword5, Email: weak5@test.com, Role: Student, Name: Test Password5
+    - ID: 143, Username: weakpassword6, Email: weak6@test.com, Role: Student, Name: Test Password6
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Software allows creating user with some too weak passwords
+  - Password '123': Software allows creating user
+  - Password 'password': Software allows creating user
+  - Password 'abc123': Software allows creating user
+  - Password 'qwerty': Software allows creating user
+  - Password 'a': Software allows creating user
+  - Password '12345678': Software allows creating user
+  - Password 'username': Software allows creating user
+  - Created 7/7 users with weak passwords
+
+
+====================================================================================================
+TEST RESULTS SUMMARY
+====================================================================================================
+
+✅ COMPLETED: Successfully create a new user
+❌ ERROR: User creation with duplicate email - Software does not check for duplicate emails!
+❌ ERROR: User creation with missing password - Software does not check for missing password!
+❌ ERROR: User creation with invalid role - Software does not check for all invalid roles!
+❌ ERROR: User creation with invalid email format - Software does not check for all invalid emails!
+✅ COMPLETED: User creation with weak password
+
+====================================================================================================
+END OF TEST REPORT

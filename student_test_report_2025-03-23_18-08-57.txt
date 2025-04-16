@@ -1,0 +1,692 @@
+ERROR DETECTION TEST REPORT - STUDENT - DATE: 23/03/2025 18:08:57
+####################################################################################################
+
+PURPOSE: These tests are designed to detect errors in the original software,
+         NOT to add new validations. Each test will check the actual behavior
+         of the software when faced with different input situations.
+
+####################################################################################################
+
+
+
+####################################################################################################
+### TEST: Successfully create a new student
+####################################################################################################
+
+Created Course with ID=1 for post_save signal
+Created SessionYear with ID=1 for post_save signal
+
+
+****************************************************************************************************
+
+🔍 TEST 1: SUCCESSFUL STUDENT CREATION
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent1
+  - Email: teststudent1@test.com
+  - Name: Student One
+  - Gender: Male
+  - Address: 123 Test Street
+  - Course ID: 151
+  - Session Year ID: 79
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 27, Username: teststudent1, Email: teststudent1@test.com, Course: Test Course, Session Year ID: 79
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student created with ID: 27
+  - Username: teststudent1
+  - Email: teststudent1@test.com
+  - Course: Test Course
+  - Session Year ID: 79
+
+
+####################################################################################################
+### TEST: Course_id does not exist but session_year_id exists
+####################################################################################################
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 TEST 2: COURSE_ID DOES NOT EXIST BUT SESSION_YEAR_ID EXISTS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Checking course_id=999999: Does not exist
+  - Session year_id=80: Exists
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student with Non-existent Course ID)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create student with:
+  - Username: teststudent2_unique
+  - Email: teststudent2@test.com
+  - Course ID: 999999 (does not exist)
+  - Session Year ID: 80 (exists)
+
+
+✅ Software caught error when creating student with non-existent course_id: Courses matching query does not exist.
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student with Non-existent Course ID)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Software prevented student creation with non-existent course_id
+  - Error message: Courses matching query does not exist.
+
+
+####################################################################################################
+### TEST: Course_id exists but session_year_id does not exist
+####################################################################################################
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 TEST 3: COURSE_ID EXISTS BUT SESSION_YEAR_ID DOES NOT EXIST
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Checking course_id=153: Exists
+  - Session year_id=999999: Does not exist
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student with Non-existent Session Year ID)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create student with:
+  - Username: teststudent3_unique
+  - Email: teststudent3@test.com
+  - Course ID: 153 (exists)
+  - Session Year ID: 999999 (does not exist)
+
+
+✅ Software caught error when creating student with non-existent session_year_id: SessionYearModel matching query does not exist.
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student with Non-existent Session Year ID)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Software prevented student creation with non-existent session_year_id
+  - Error message: SessionYearModel matching query does not exist.
+
+
+####################################################################################################
+### TEST: Both course_id and session_year_id do not exist
+####################################################################################################
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 TEST 4: BOTH COURSE_ID AND SESSION_YEAR_ID DO NOT EXIST
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Checking course_id=999999: Does not exist
+  - Session year_id=888888: Does not exist
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student with Both IDs Non-existent)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create student with:
+  - Username: teststudent4_unique
+  - Email: teststudent4@test.com
+  - Course ID: 999999 (does not exist)
+  - Session Year ID: 888888 (does not exist)
+
+
+✅ Software caught error when creating student with both IDs non-existent:
+  - Error type: DoesNotExist
+  - Message: Courses matching query does not exist.
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student with Both IDs Non-existent)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Software prevented student creation with both IDs non-existent
+  - Error type: DoesNotExist
+  - Error message: Courses matching query does not exist.
+  - Error occurred at course_id check (as expected)
+
+
+####################################################################################################
+### TEST: User_id already registered in that course_id but different session_year_id
+####################################################################################################
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 TEST 5: USER_ID ALREADY REGISTERED IN THAT COURSE_ID BUT DIFFERENT SESSION_YEAR_ID
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATING INITIAL STUDENT (Before Creating Initial Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating initial student with:
+  - Username: teststudent5_unique
+  - Email: teststudent5@test.com
+  - Course ID: 155
+  - Session Year ID: 83
+
+
+✅ Successfully created initial student
+
+================================================================================
+
+  📊 AFTER CREATING INITIAL STUDENT (After Creating Initial Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 28, Username: teststudent5_unique, Email: teststudent5@test.com, Course: Test Course, Session Year ID: 83
+
+================================================================================
+
+
+📌 Attempting to update student with same user, same course, but different session_year:
+  - Username: teststudent5_unique
+  - Old Course ID: 155 (Test Course)
+  - Old Session Year ID: 83
+  - New Session Year ID: 84
+
+
+⚠️ ERROR DETECTED: Software allows updating student to different session_year while keeping course_id
+
+================================================================================
+
+  📊 AFTER ATTEMPTING SESSION YEAR UPDATE (After Attempting Session Year Update)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 28, Username: teststudent5_unique, Email: teststudent5@test.com, Course: Test Course, Session Year ID: 84
+
+================================================================================
+
+
+🟡 TEST RESULT: INFO (Software allows update)
+  - Software allowed updating student to different session_year
+  - This may be intended in system design
+
+
+####################################################################################################
+### TEST: User_id does not have "student" role but student is created
+####################################################################################################
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 TEST 6: USER_ID DOES NOT HAVE ROLE 'STUDENT' BUT STUDENT IS CREATED
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating non-student user:
+  - Username: testhod_unique
+  - Email: testhod@test.com
+  - User Type: 1 (HOD, not Student)
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Attempting to Create Student for Non-student User)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+❌ Error creating HOD user: UNIQUE constraint failed: student_management_app_customuser.username
+
+❌ ERROR DURING TEST: Could not set up test data: UNIQUE constraint failed: student_management_app_customuser.username
+
+
+
+####################################################################################################
+### TEST: User_id already registered in a different course_id within the same session_year_id
+####################################################################################################
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 TEST 7: USER_ID ALREADY REGISTERED IN DIFFERENT COURSE_ID WITHIN SAME SESSION_YEAR_ID
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATING INITIAL STUDENT (Before Creating Initial Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating initial student with:
+  - Username: teststudent7_unique
+  - Email: teststudent7@test.com
+  - Course ID: 157 (Test Course)
+  - Session Year ID: 86
+
+
+✅ Successfully created initial student
+
+================================================================================
+
+  📊 AFTER CREATING INITIAL STUDENT (After Creating Initial Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 29, Username: teststudent7_unique, Email: teststudent7@test.com, Course: Test Course, Session Year ID: 86
+
+================================================================================
+
+
+📌 Attempting to update student with same user, different course, but same session_year:
+  - Username: teststudent7_unique
+  - Old Course ID: 157 (Test Course)
+  - New Course ID: 158 (Another Test Course)
+  - Session Year ID: 86 (unchanged)
+
+
+⚠️ ERROR DETECTED: Software allows updating student to different course while keeping session_year_id
+
+================================================================================
+
+  📊 AFTER ATTEMPTING COURSE UPDATE (After Attempting Course Update)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 29, Username: teststudent7_unique, Email: teststudent7@test.com, Course: Another Test Course, Session Year ID: 86
+
+================================================================================
+
+
+🟡 TEST RESULT: INFO (Software allows update)
+  - Software allowed updating student to different course
+  - This may be intended in system design
+
+
+####################################################################################################
+### TEST: User_id already registered in a different course_id and different session_year_id
+####################################################################################################
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 TEST 8: USER_ID ALREADY REGISTERED IN DIFFERENT COURSE_ID AND DIFFERENT SESSION_YEAR_ID
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATING INITIAL STUDENT (Before Creating Initial Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating initial student with:
+  - Username: teststudent8_unique
+  - Email: teststudent8@test.com
+  - Course ID: 159 (Test Course)
+  - Session Year ID: 87
+
+
+✅ Successfully created initial student
+
+================================================================================
+
+  📊 AFTER CREATING INITIAL STUDENT (After Creating Initial Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 30, Username: teststudent8_unique, Email: teststudent8@test.com, Course: Test Course, Session Year ID: 87
+
+================================================================================
+
+
+📌 Attempting to update student with same user, different course, and different session_year:
+  - Username: teststudent8_unique
+  - Old Course ID: 159 (Test Course)
+  - New Course ID: 160 (Another Test Course for Test 8)
+  - Old Session Year ID: 87
+  - New Session Year ID: 88
+
+
+⚠️ ERROR DETECTED: Software allows updating student to different course and session_year
+
+================================================================================
+
+  📊 AFTER ATTEMPTING UPDATE (After Attempting Course and Session Year Update)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 30, Username: teststudent8_unique, Email: teststudent8@test.com, Course: Another Test Course for Test 8, Session Year ID: 88
+
+================================================================================
+
+
+🟡 TEST RESULT: INFO (Software allows update)
+  - Software allowed updating student to different course and session_year
+  - This may be intended in system design
+
+
+####################################################################################################
+### TEST: Student created but the course is already at maximum capacity
+####################################################################################################
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 TEST 9: STUDENT IS CREATED BUT THE COURSE IS ALREADY FULL
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Created new course with assumed capacity of 2 students:
+  - Course ID: 162
+  - Course Name: Max Capacity Test Course
+
+📌 Creating student 1/2 for course:
+  - Username: capacitystudent0_unique
+  - Email: capacitystudent0@test.com
+  - Course ID: 162 (Max Capacity Test Course)
+
+✅ Successfully created student 1/2 for full course
+
+📌 Creating student 2/2 for course:
+  - Username: capacitystudent1_unique
+  - Email: capacitystudent1@test.com
+  - Course ID: 162 (Max Capacity Test Course)
+
+✅ Successfully created student 2/2 for full course
+
+📊 Currently there are 2/2 students in the course
+
+✅ Course has reached maximum capacity!
+
+================================================================================
+
+  📊 BEFORE ATTEMPTING CREATION (Before Attempting to Create Student in Full Course)
+
+  📋 Number of Students: 2
+
+  📝 Details:
+    - ID: 31, Username: capacitystudent0_unique, Email: capacitystudent0@test.com, Course: Max Capacity Test Course, Session Year ID: 89
+    - ID: 32, Username: capacitystudent1_unique, Email: capacitystudent1@test.com, Course: Max Capacity Test Course, Session Year ID: 89
+
+================================================================================
+
+
+📌 Attempting to create additional student for full course:
+  - Username: extra_student_unique
+  - Email: extra_student@test.com
+  - Course ID: 162 (Max Capacity Test Course)
+
+✅ Detected and prevented creating student for full course: Course has reached maximum capacity
+
+================================================================================
+
+  📊 AFTER ATTEMPTING CREATION (After Attempting to Create Student in Full Course)
+
+  📋 Number of Students: 2
+
+  📝 Details:
+    - ID: 31, Username: capacitystudent0_unique, Email: capacitystudent0@test.com, Course: Max Capacity Test Course, Session Year ID: 89
+    - ID: 32, Username: capacitystudent1_unique, Email: capacitystudent1@test.com, Course: Max Capacity Test Course, Session Year ID: 89
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED (Detected full course)
+  - Software prevented creating student for full course
+  - Message: Course has reached maximum capacity
+
+
+====================================================================================================
+TEST RESULTS SUMMARY
+====================================================================================================
+
+✅ COMPLETED: Successfully create a new student
+✅ COMPLETED: Course_id does not exist but session_year_id exists
+✅ COMPLETED: Course_id exists but session_year_id does not exist
+✅ COMPLETED: Both course_id and session_year_id do not exist
+✅ COMPLETED: User_id already registered in that course_id but different session_year_id
+❌ ERROR: User_id does not have "student" role but student is created - Could not set up test data: UNIQUE constraint failed: student_management_app_customuser.username
+✅ COMPLETED: User_id already registered in a different course_id within the same session_year_id
+✅ COMPLETED: User_id already registered in a different course_id and different session_year_id
+✅ COMPLETED: Student created but the course is already at maximum capacity
+
+====================================================================================================
+END OF TEST REPORT
