@@ -33,24 +33,59 @@ def run_and_capture_tests():
         
         # Create and run each test individually to record complete results
         test_cases = [
-            ('test_1_successful_student_creation', 'Successfully create a new student'),
-            ('test_2_nonexistent_course_id', 'Course_id does not exist but session_year_id exists'),
-            ('test_3_nonexistent_session_year_id', 'Course_id exists but session_year_id does not exist'),
-            ('test_4_both_ids_nonexistent', 'Both course_id and session_year_id do not exist'),
-            ('test_5_same_user_same_course_different_session', 'User_id already registered in that course_id but different session_year_id'),
-            ('test_6_non_student_user_create_student', 'User_id does not have "student" role but student is created'),
-            ('test_7_same_user_different_course_same_session', 'User_id already registered in a different course_id within the same session_year_id'),
-            ('test_8_same_user_different_course_different_session', 'User_id already registered in a different course_id and different session_year_id'),
-            ('test_9_course_at_max_capacity', 'Student created but the course is already at maximum capacity')
+            ('STU_ADD_FN_01_first_name_empty_string_ERROR', 'first_name has empty string - ERROR'),
+            ('STU_ADD_FN_02_first_name_one_character_SUCCESS', 'first_name has 1 character - SUCCESS'),
+            ('STU_ADD_FN_03_first_name_two_characters_SUCCESS', 'first_name has 2 characters - SUCCESS'),
+            ('STU_ADD_FN_04_first_name_49_characters_SUCCESS','first_name has 49 characters - SUCCESS'),
+            ('STU_ADD_FN_05_first_name_50_characters_SUCCESS','first_name has 50 characters - SUCCESS'),
+            ('STU_ADD_FN_06_first_name_51_characters_ERROR','first_name has 51 characters - ERROR'),
+            ('STU_ADD_FN_07_first_name_contains_digits_ERROR','first_name contains digits - ERROR'),
+            ('STU_ADD_FN_08_first_name_contains_special_characters_ERROR','first_name contains special characters - ERROR'),
+            ('STU_ADD_LN_01_last_name_empty_string_ERROR','last_name has empty string - ERROR'),
+            ('STU_ADD_LN_02_last_name_one_character_SUCCESS','last_name has 1 character - SUCCESS'),
+            ('STU_ADD_LN_03_last_name_two_characters_SUCCESS','last_name has 2 characters - SUCCESS'),
+            ('STU_ADD_LN_04_last_name_49_characters_SUCCESS','last_name has 49 characters - SUCCESS'),
+            ('STU_ADD_LN_05_last_name_50_characters_SUCCESS','last_name has 50 characters - SUCCESS'),
+            ('STU_ADD_LN_06_last_name_51_characters_ERROR','last_name has 51 characters - ERROR'),
+            ('STU_ADD_LN_07_last_name_contains_digits_ERROR','last_name contains digits - ERROR'),
+            ('STU_ADD_LN_08_last_name_contains_special_chars_ERROR','last_name contains special characters - ERROR'),
+            ('STU_ADD_UN_01_username_empty_string_ERROR','user_name has empty string - ERROR'),
+            ('STU_ADD_UN_02_username_two_characters_ERROR','user_name has 2 character – ERROR'),
+            ('STU_ADD_UN_03_username_three_characters_SUCCESS','user_name has 3 characters – SUCCESS'),
+            ('STU_ADD_UN_04_username_four_characters_SUCCESS','user_name has 4 characters – SUCCESS'),
+            ('STU_ADD_UN_05_username_29_characters_SUCCESS','user_name has 29 characters – SUCCESS'),
+            ('STU_ADD_UN_06_username_30_characters_SUCCESS','user_name has 30 characters - SUCCESS'),
+            ('STU_ADD_UN_07_username_31_characters_ERROR','user_name has 31 characters - SUCCESS'),
+            ('STU_ADD_UN_08_username_starts_with_digit_ERROR','user_name starts with a digit - ERROR'),
+            ('STU_ADD_UN_09_username_contains_special_characters_ERROR','user_name contains special characters - ERROR'),
+            ('STU_ADD_UN_10_username_is_duplicated_ERROR','user_name is duplicated - ERROR'),
+            ('STU_ADD_EM_01_email_empty_string_ERROR','email has empty string - ERROR'),
+            ('STU_ADD_EM_02_email_7_characters_ERROR','email has 7 character – ERROR'),
+            ('STU_ADD_EM_03_email_8_characters_SUCCESS','email has 8 characters – SUCCESS'),
+            ('STU_ADD_EM_04_email_9_characters_SUCCESS','email has 9 characters – SUCCESS'),
+            ('STU_ADD_EM_05_email_49_characters_SUCCESS','email has 49 characters – SUCCESS'),
+            ('STU_ADD_EM_06_email_50_characters_SUCCESS','email has 50 characters – SUCCESS'),
+            ('STU_ADD_EM_07_email_51_characters_ERROR','email has 51 characters – SUCCESS'),
+            ('STU_ADD_EM_08_email_missing_domain_ERROR','email missing domain - ERROR'),
+            ('STU_ADD_EM_09_email_missing_at_symbol_ERROR','email missing @ symbol - ERROR'),
+            ('STU_ADD_EM_10_email_contains_special_characters_ERROR','email contains special characters, except “@” - ERROR'),
+            ('STU_ADD_EM_11_email_is_duplicated_ERROR','email is duplicated - ERROR'),
+            ('STU_ADD_PW_01_password_empty_string_ERROR','password has empty string - ERROR'),
+            ('STU_ADD_PW_02_password_seven_characters_ERROR','password has 7 character – ERROR'),
+            ('STU_ADD_PW_03_password_eight_characters_SUCCESS','password has 8 characters – SUCCESS'),
+            ('STU_ADD_PW_04_password_nine_characters_SUCCESS','password has 9 characters – SUCCESS'),
+            ('STU_ADD_PW_05_password_sixty_three_characters_SUCCESS','password has 63 characters – SUCCESS'),
+            ('STU_ADD_PW_06_password_sixty_four_characters_SUCCESS','password has 64 characters – SUCCESS'),
+            ('STU_ADD_PW_07_password_sixty_five_characters_ERROR','password has 65 characters - ERROR'),
+            ('STU_ADD_PW_08_password_missing_uppercase_ERROR','password missing uppercase letter - ERROR'),
+            ('STU_ADD_PW_09_password_missing_lowercase_ERROR','password missing lowercase letter - ERROR'),
+            ('STU_ADD_PW_10_password_missing_digit_ERROR','password missing digit - ERROR'),
+            ('STU_ADD_PW_11_password_missing_special_char_ERROR','password missing special characters - ERROR')
         ]
         
         test_results = []
         
-        for test_method, test_name in test_cases:
-            print(f"\n\n{'#'*100}")
-            print(f"### TEST: {test_name}")
-            print(f"{'#'*100}\n")
-            
+        for test_method, test_name in test_cases:         
             # Create a separate instance of the test class with an isolated environment
             test_instance = StudentModelTest(test_method)
 

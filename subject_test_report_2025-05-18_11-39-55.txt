@@ -1,0 +1,1515 @@
+ERROR DETECTION TEST REPORT - SUBJECT - DATE: 18/05/2025 11:39:55
+####################################################################################################
+
+PURPOSE: These tests are designed to detect errors in the original software,
+         NOT to add new validations. Each test will check the actual behavior
+         of the software when faced with different input situations.
+
+####################################################################################################
+
+
+====================================================================================================
+LIST OF TESTS TO RUN:
+🔍 1. subject_id has empty string - ERROR
+🔍 2. subject_id has no digit - ERROR
+🔍 3. subject_id has 2 digits – ERROR
+🔍 4. subject_id has 3 digits - SUCCESS
+🔍 5. subject_id has 4 digits - ERROR
+🔍 6. subject_id has non-digit characters
+🔍 7. subject_id has lowercase letter – ERROR
+🔍 8. subject_id has 3 digits are zero- ERROR
+🔍 9. subject_id has 3 digits are 9 - SUCCESS
+🔍 10. subject_id contains whitespace – ERROR
+🔍 11. subject_id does not start with SB - ERROR
+🔍 12. subject_id is duplicated - ERROR
+🔍 13. subject_name has empty string - ERROR
+🔍 14. subject_name has 1 characters - ERROR
+🔍 15. subject_name has 2 characters - SUCCESS
+🔍 16. subject_name has 3 characters – SUCCESS
+🔍 17. subject_name has 49 characters - SUCCESS
+🔍 18. subject_name has 50 characters - SUCCESS
+🔍 19. subject_name has 51 characters - ERROR
+🔍 20. subject_name contains special character - ERROR
+🔍 21. subject_name is duplicated - ERROR
+🔍 22. course_id has empty string - ERROR
+🔍 23. course_id is existed in the system - SUCCESS
+🔍 24. course_id is not existed in the system - ERROR
+====================================================================================================
+
+⏱️ STARTING TESTS: 11:39:55
+
+****************************************************************************************************
+
+🔍 S-ADD-ID-01: subject_id has empty string - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - ID: 
+  - Name: Mathematics
+  - Description: Advanced Topics in Mathematics
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 88, Subject Name: Mathematics, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite subject_id has empty string
+
+❌ ERROR DURING TEST: Subject creation should fail for subject_id has empty string
+
+
+****************************************************************************************************
+
+🔍 S-ADD-ID-02: subject_id has no digit – ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - ID: SB
+  - Name: Physics
+  - Description: Fundamentals of Physics
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 89, Subject Name: Physics, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite invalid subject_id format
+
+❌ ERROR DURING TEST: Subject creation should fail for subject_id that has no digit
+
+
+****************************************************************************************************
+
+🔍 S-ADD-ID-03: subject_id has 2 digits – ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - ID: SB12
+  - Name: Chemistry
+  - Description: Basics of Chemistry
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 90, Subject Name: Chemistry, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite subject_id having 2 digits
+
+❌ ERROR DURING TEST: Subject creation should fail for subject_id that has 2 digits
+
+
+****************************************************************************************************
+
+🔍 S-ADD-ID-04: subject_id has 3 digits – SUCCESS.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - ID: SB123
+  - Name: Biology
+  - Description: Introduction to Biology
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 91, Subject Name: Biology, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Subject was successfully created with a valid subject_id
+
+****************************************************************************************************
+
+🔍 S-ADD-ID-05: subject_id has 4 digits - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - ID: SB1234
+  - Name: Chemistry
+  - Description: Organic Chemistry
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 92, Subject Name: Chemistry, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite subject_id has 4 digits
+
+❌ ERROR DURING TEST: Subject creation should fail for subject_id with 4 digits
+
+
+****************************************************************************************************
+
+🔍 S-ADD-ID-06: subject_id has non-digit characters - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - ID: SB1A-
+  - Name: History
+  - Description: World History
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 93, Subject Name: History, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite subject_id has non-digit characters
+
+❌ ERROR DURING TEST: Subject creation should fail for subject_id containing non-digit characters after 'SB'
+
+
+****************************************************************************************************
+
+🔍 S-ADD-ID-07: subject_id has lowercase letter - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - ID: sb123
+  - Name: Geography
+  - Description: Physical Geography
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 94, Subject Name: Geography, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite subject_id has lowercase letter
+
+❌ ERROR DURING TEST: Subject creation should fail for subject_id with lowercase letter in 'SB'
+
+
+****************************************************************************************************
+
+🔍 S-ADD-ID-08: subject_id has 3 digits are zero - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - ID: SB000
+  - Name: Chemistry
+  - Description: Basic Chemistry
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 95, Subject Name: Chemistry, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite subject_id has digits all zero
+
+❌ ERROR DURING TEST: Subject creation should fail for subject_id with digits all zero
+
+
+****************************************************************************************************
+
+🔍 S-ADD-ID-09: subject_id has digits 999 - SUCCESS.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - ID: SB999
+  - Name: Advanced Physics
+  - Description: Physics at advanced level
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 96, Subject Name: Advanced Physics, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Subject creation succeeded as expected for valid subject_id SB999
+
+****************************************************************************************************
+
+🔍 S-ADD-ID-10: subject_id contains whitespace - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - ID: SB 12
+  - Name: Biology
+  - Description: Basic Biology
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 97, Subject Name: Biology, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite subject_id contains whitespace
+
+❌ ERROR DURING TEST: Subject creation should fail for subject_id contains whitespace
+
+
+****************************************************************************************************
+
+🔍 S-ADD-ID-11: subject_id does not start with SB - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - ID: 1234
+  - Name: Chemistry
+  - Description: General Chemistry
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 98, Subject Name: Chemistry, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite subject_id does not start with SB
+
+❌ ERROR DURING TEST: Subject creation should fail for subject_id does not start with SB
+
+
+****************************************************************************************************
+
+🔍 S-ADD-ID-12: subject_id is duplicated - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Duplicate Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 99, Subject Name: History, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+📌 Creating duplicate subject with:
+  - ID: SB123
+  - Name: History
+  - Description: World History
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Duplicate Subject)
+
+  📋 Number of Subjects: 2
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 99, Subject Name: History, Course: Default Course, Instructor: teststaff
+    - ID: 100, Subject Name: History, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite duplicate subject_id
+
+❌ ERROR DURING TEST: Subject creation should fail for duplicate subject_id
+
+
+****************************************************************************************************
+
+🔍 S-ADD-NA-01: subject_name has empty string - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - Name:  (empty string)
+  - Description: Any Description
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 101, Subject Name: , Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite empty subject_name
+
+❌ ERROR DURING TEST: Subject creation should fail for empty subject_name
+
+
+****************************************************************************************************
+
+🔍 S-ADD-NA-02: subject_name has 1 character - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - Name: A
+  - Description: Any Description
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 102, Subject Name: A, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite subject_name length 1 character
+
+❌ ERROR DURING TEST: Subject creation should fail for subject_name length 1 character
+
+
+****************************************************************************************************
+
+🔍 S-ADD-NA-03: subject_name has 2 characters - SUCCESS.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - Name: BA
+  - Description: Any Description
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 103, Subject Name: BA, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Subject creation succeeded as expected with subject_name length 2 characters
+
+****************************************************************************************************
+
+🔍 S-ADD-NA-04: subject_name has 3 characters - SUCCESS.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - Name: IT1
+  - Description: Any Description
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 104, Subject Name: IT1, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Subject creation succeeded as expected with subject_name length 3 characters
+
+****************************************************************************************************
+
+🔍 S-ADD-NA-05: subject_name has 49 characters - SUCCESS.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - Name: Introduction to Software Quality Assurance Concepts
+  - Description: Any Description
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 105, Subject Name: Introduction to Software Quality Assurance Concepts, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Subject creation succeeded as expected with subject_name length 49 characters
+
+****************************************************************************************************
+
+🔍 S-ADD-NA-06: subject_name has 50 characters - SUCCESS.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - Name: Advanced Topics in Software Testing and QA Methods
+  - Description: Any Description
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 106, Subject Name: Advanced Topics in Software Testing and QA Methods, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Subject creation succeeded as expected with subject_name length 50 characters
+
+****************************************************************************************************
+
+🔍 S-ADD-NA-07: subject_name has 51 characters - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - Name: Comprehensive Guide to Software Testing Techniques
+  - Description: Any Description
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 107, Subject Name: Comprehensive Guide to Software Testing Techniques, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite subject_name length > 50
+
+❌ ERROR DURING TEST: Subject creation should fail for subject_name length > 50
+
+
+****************************************************************************************************
+
+🔍 S-ADD-NA-08: subject_name contains special character - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - Name: AI@
+  - Description: Any Description
+  - Course ID: 1
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Subject)
+
+  📋 Number of Subjects: 1
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    - ID: 108, Subject Name: AI@, Course: Default Course, Instructor: teststaff
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Subject was created despite special character in subject_name
+
+❌ ERROR DURING TEST: Subject creation should fail for subject_name containing special characters
+
+
+****************************************************************************************************
+
+🔍 S-ADD-NA-09: subject_name is duplicated - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+❌ ERROR DURING TEST: Invalid field name(s) for model Subjects: 'description'.
+
+
+****************************************************************************************************
+
+🔍 S-ADD-STA-01: course_id has empty string - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - Course ID: '' (empty string)
+  - Name: Some Subject
+  - Description: Some Description
+
+❌ ERROR CREATING SUBJECT: Field 'id' expected a number but got ''.
+
+🟢 TEST RESULT: PASSED
+  - Subject creation failed as expected due to empty course_id
+  - Error message: Field 'id' expected a number but got ''.
+
+****************************************************************************************************
+
+🔍 S-ADD-STA-02: course_id exists in the system - SUCCESS.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+❌ ERROR DURING TEST: Field 'id' expected a number but got 'C123'.
+
+
+****************************************************************************************************
+
+🔍 S-ADD-STA-03: course_id does not exist in the system - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Subject)
+
+  📋 Number of Subjects: 0
+
+  📋 Number of Courses: 2
+
+  📋 Number of Users: 3
+
+  📝 Subject Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating subject with:
+  - Course ID: inactive
+  - Name: Test Subject
+  - Description: Test description
+
+❌ ERROR CREATING SUBJECT: Field 'id' expected a number but got 'inactive'.
+
+🟢 TEST RESULT: PASSED
+  - Subject creation failed as expected due to non-existent course_id
+  - Error message: Field 'id' expected a number but got 'inactive'.
+
+
+====================================================================================================
+📊 TEST RESULTS SUMMARY
+====================================================================================================
+
+1. ❌ ERROR: subject_id has empty string - ERROR (0.02s) - Subject creation should fail for subject_id has empty string
+2. ❌ ERROR: subject_id has no digit - ERROR (0.02s) - Subject creation should fail for subject_id that has no digit
+3. ❌ ERROR: subject_id has 2 digits – ERROR (0.02s) - Subject creation should fail for subject_id that has 2 digits
+4. ✅ COMPLETED: subject_id has 3 digits - SUCCESS (0.02s)
+5. ❌ ERROR: subject_id has 4 digits - ERROR (0.02s) - Subject creation should fail for subject_id with 4 digits
+6. ❌ ERROR: subject_id has non-digit characters (0.02s) - Subject creation should fail for subject_id containing non-digit characters after 'SB'
+7. ❌ ERROR: subject_id has lowercase letter – ERROR (0.02s) - Subject creation should fail for subject_id with lowercase letter in 'SB'
+8. ❌ ERROR: subject_id has 3 digits are zero- ERROR (0.02s) - Subject creation should fail for subject_id with digits all zero
+9. ✅ COMPLETED: subject_id has 3 digits are 9 - SUCCESS (0.02s)
+10. ❌ ERROR: subject_id contains whitespace – ERROR (0.02s) - Subject creation should fail for subject_id contains whitespace
+11. ❌ ERROR: subject_id does not start with SB - ERROR (0.02s) - Subject creation should fail for subject_id does not start with SB
+12. ❌ ERROR: subject_id is duplicated - ERROR (0.03s) - Subject creation should fail for duplicate subject_id
+13. ❌ ERROR: subject_name has empty string - ERROR (0.02s) - Subject creation should fail for empty subject_name
+14. ❌ ERROR: subject_name has 1 characters - ERROR (0.03s) - Subject creation should fail for subject_name length 1 character
+15. ✅ COMPLETED: subject_name has 2 characters - SUCCESS (0.02s)
+16. ✅ COMPLETED: subject_name has 3 characters – SUCCESS (0.02s)
+17. ✅ COMPLETED: subject_name has 49 characters - SUCCESS (0.02s)
+18. ✅ COMPLETED: subject_name has 50 characters - SUCCESS (0.02s)
+19. ❌ ERROR: subject_name has 51 characters - ERROR (0.02s) - Subject creation should fail for subject_name length > 50
+20. ❌ ERROR: subject_name contains special character - ERROR (0.01s) - Subject creation should fail for subject_name containing special characters
+21. ❌ ERROR: subject_name is duplicated - ERROR (0.00s) - Invalid field name(s) for model Subjects: 'description'.
+22. ✅ COMPLETED: course_id has empty string - ERROR (0.00s)
+23. ❌ ERROR: course_id is existed in the system - SUCCESS (0.00s) - Field 'id' expected a number but got 'C123'.
+24. ✅ COMPLETED: course_id is not existed in the system - ERROR (0.00s)
+
+====================================================================================================
+END OF TEST REPORT

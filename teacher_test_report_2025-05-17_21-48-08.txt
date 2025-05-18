@@ -1,0 +1,2784 @@
+ERROR DETECTION TEST REPORT - TEACHER - DATE: 17/05/2025 21:48:08
+####################################################################################################
+
+PURPOSE: These tests are designed to detect errors in the original software,
+         NOT to add new validations. Each test will check the actual behavior
+         of the software when faced with different input situations.
+
+####################################################################################################
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-FN-01: first_name has empty string - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff1
+  - Email: teststaff1@test.com
+  - Name: '' Doe
+  - Specialization: Python, Java
+  - Status: active
+
+❌ User has linked staff object, but this should not happen for empty first_name
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 140, Username: teststaff1, Email: teststaff1@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher was created despite empty first_name
+
+❌ ERROR DURING TEST: Teacher creation should fail for empty first_name
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-FN-02: first_name has 1 character - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff2
+  - Email: teststaff2@test.com
+  - Name: J Smith
+  - Specialization: Java, Spring
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 141, Username: teststaff2, Email: teststaff2@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 141
+  - Username: teststaff2
+  - Email: teststaff2@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-FN-03: first_name has 2 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff3
+  - Email: teststaff3@test.com
+  - Name: Jo Smith
+  - Specialization: C#, .NET
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 142, Username: teststaff3, Email: teststaff3@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 142
+  - Username: teststaff3
+  - Email: teststaff3@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-FN-04: first_name has 49 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff4
+  - Email: teststaff4@test.com
+  - Name: Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn Smith
+  - Specialization: HTML, CSS, JS
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 143, Username: teststaff4, Email: teststaff4@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 143
+  - Username: teststaff4
+  - Email: teststaff4@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-FN-05: first_name has 50 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff5
+  - Email: teststaff5@test.com
+  - Name: Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn Brown
+  - Specialization: Go, Rust
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 144, Username: teststaff5, Email: teststaff5@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 144
+  - Username: teststaff5
+  - Email: teststaff5@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-FN-06: first_name has 51 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff6
+  - Email: teststaff6@test.com
+  - Name: Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn Doe
+  - Specialization: Python, JavaScript
+  - Status: active
+
+❌ User has linked staff object, but this should not happen for invalid first_name length
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 145, Username: teststaff6, Email: teststaff6@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher was created despite invalid first_name length
+
+❌ ERROR DURING TEST: Teacher creation should fail for first_name length > 50 characters
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-FN-07: first_name contains digits - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff7
+  - Email: teststaff7@test.com
+  - Name: John111 Doe
+  - Specialization: Java, C#
+  - Status: active
+
+❌ User has linked staff object, but this should not happen for invalid first_name with digits
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 146, Username: teststaff7, Email: teststaff7@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher was created despite digits in first_name
+
+❌ ERROR DURING TEST: Teacher creation should fail for first_name containing digits
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-FN-08: first_name contains special characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff8
+  - Email: teststaff8@test.com
+  - Name: John@ Doe
+  - Specialization: Python, JavaScript
+  - Status: active
+
+❌ User has linked staff object, but this should not happen for invalid first_name with special characters
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 147, Username: teststaff8, Email: teststaff8@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher was created despite special characters in first_name
+
+❌ ERROR DURING TEST: Teacher creation should fail for first_name containing special characters
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-LN-01: last_name has empty string - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff2
+  - Email: teststaff2@test.com
+  - Name: John ''
+  - Specialization: Python, Java
+  - Status: active
+
+❌ User has linked staff object, but this should not happen for empty last_name
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 148, Username: teststaff2, Email: teststaff2@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher was created despite empty last_name
+
+❌ ERROR DURING TEST: Teacher creation should fail for empty last_name
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-LN-02: last_name has 1 character - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff3
+  - Email: teststaff3@test.com
+  - Name: John S
+  - Specialization: JavaScript, React
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 149, Username: teststaff3, Email: teststaff3@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 149
+  - Username: teststaff3
+  - Email: teststaff3@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-LN-03: last_name has 2 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff4
+  - Email: teststaff4@test.com
+  - Name: John St
+  - Specialization: Python, Django
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 150, Username: teststaff4, Email: teststaff4@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 150
+  - Username: teststaff4
+  - Email: teststaff4@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-LN-04: last_name has 49 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff5
+  - Email: teststaff5@test.com
+  - Name: John Steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+  - Specialization: Python, Django
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 151, Username: teststaff5, Email: teststaff5@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 151
+  - Username: teststaff5
+  - Email: teststaff5@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-LN-05: last_name has 50 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff6
+  - Email: teststaff6@test.com
+  - Name: John Steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+  - Specialization: Python, Django
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 152, Username: teststaff6, Email: teststaff6@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 152
+  - Username: teststaff6
+  - Email: teststaff6@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-LN-06: last_name has 51 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff7
+  - Email: teststaff7@test.com
+  - Name: John Steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+  - Specialization: Python, Django
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 153, Username: teststaff7, Email: teststaff7@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher should NOT be created with invalid last_name length
+
+❌ ERROR DURING TEST: Teacher created despite invalid last_name length
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-LN-07: last_name contains digits - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff8
+  - Email: teststaff8@test.com
+  - Name: John Steve111
+  - Specialization: Java, Spring
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 154, Username: teststaff8, Email: teststaff8@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher should NOT be created with invalid last_name containing digits
+
+❌ ERROR DURING TEST: Teacher created despite invalid last_name containing digits
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-LN-08: last_name contains special characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff9
+  - Email: teststaff9@test.com
+  - Name: John Steve@
+  - Specialization: Python, Django
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 155, Username: teststaff9, Email: teststaff9@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher should NOT be created with invalid last_name containing special characters
+
+❌ ERROR DURING TEST: Teacher created despite invalid last_name containing special characters
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-UN-01: user_name has empty string - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: ''
+  - Email: testuser1@test.com
+  - Name: John Doe
+  - Specialization: Java, Spring
+  - Status: active
+
+
+❌ ERROR CREATING TEACHER: The given username must be set
+
+🟢 TEST RESULT: PASSED
+  - Creation blocked due to empty username
+  - Error: The given username must be set
+
+
+****************************************************************************************************
+
+🔍 T-ADD-UN-02: user_name has 2 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: 'jo'
+  - Email: testuser2@test.com
+  - Name: John Doe
+  - Specialization: Java, Spring
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 156, Username: jo, Email: testuser2@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher should NOT be created with username length < 3
+
+❌ ERROR DURING TEST: Teacher created despite username length < 3
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-UN-03: user_name has 3 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: joh
+  - Email: joh@test.com
+  - Name: John Doe
+  - Specialization: C, C++
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 157, Username: joh, Email: joh@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 157
+  - Username: joh
+  - Email: joh@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-UN-04: user_name has 4 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: john
+  - Email: john@test.com
+  - Name: John Doe
+  - Specialization: C, C++
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 158, Username: john, Email: john@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 158
+  - Username: john
+  - Email: john@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-UN-05: user_name has 29 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: johnsteveeeeeeeeeeeeeeeeeeeee
+  - Email: john29@test.com
+  - Name: John Doe
+  - Specialization: Python, AI
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 159, Username: johnsteveeeeeeeeeeeeeeeeeeeee, Email: john29@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 159
+  - Username: johnsteveeeeeeeeeeeeeeeeeeeee
+  - Email: john29@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-UN-06: user_name has 30 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: johnsteveeeeeeeeeeeeeeeeeeeeee
+  - Email: john30@test.com
+  - Name: John Doe
+  - Specialization: Python, AI
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 160, Username: johnsteveeeeeeeeeeeeeeeeeeeeee, Email: john30@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 160
+  - Username: johnsteveeeeeeeeeeeeeeeeeeeeee
+  - Email: john30@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-UN-07: user_name has 31 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: johnsteveeeeeeeeeeeeeeeeeeeeeee
+  - Email: john31@test.com
+  - Name: John Doe
+  - Specialization: Python, AI
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 161, Username: johnsteveeeeeeeeeeeeeeeeeeeeeee, Email: john31@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher creation should have failed due to invalid username length
+
+❌ ERROR DURING TEST: Teacher was created despite username exceeding 30 characters
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-UN-08: user_name starts with a digit - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: 9johnsteve
+  - Email: digitstart@test.com
+  - Name: John Doe
+  - Specialization: Python, AI
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 162, Username: 9johnsteve, Email: digitstart@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher creation should have failed due to username starting with digit
+
+❌ ERROR DURING TEST: Teacher was created despite username starting with a digit
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-UN-09: user_name contains special characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: johnsteve#
+  - Email: specialchar@test.com
+  - Name: John Doe
+  - Specialization: AI, Data
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 163, Username: johnsteve#, Email: specialchar@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher creation should have failed due to special characters in username
+
+❌ ERROR DURING TEST: Teacher was created despite invalid username containing special characters
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-UN-10: user_name is duplicated - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating first teacher (should be successful)
+✅ First user created successfully.
+
+
+================================================================================
+
+  📊 BEFORE DUPLICATE CREATION (Before Creating Duplicate Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 164, Username: john, Email: john@test.com
+
+================================================================================
+
+
+📌 Attempting to create duplicate teacher with same username:
+  - Username: john
+  - Email: duplicatejohn@test.com
+  - Name: John Doe
+  - Specialization: Web Dev
+  - Status: active
+
+
+✅ Expected error was caught: UNIQUE constraint failed: student_management_app_customuser.username
+
+🟢 TEST RESULT: PASSED
+  - System correctly prevented duplicate username: john
+
+
+****************************************************************************************************
+
+🔍 T-ADD-EM-01: email has empty string - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: emptyemailstaff
+  - Email: 
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+❌ Unexpected success: User has staff object despite empty email
+
+🔴 TEST RESULT: FAILED
+  - System allowed creation with empty email.
+
+❌ ERROR DURING TEST: Empty email was allowed but should have been rejected.
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-EM-02: email has 7 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: shortemailstaff
+  - Email: s@x.com (length=7)
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+❌ Unexpected success: User has staff object despite short email
+
+🔴 TEST RESULT: FAILED
+  - System allowed creation with invalid short email.
+
+❌ ERROR DURING TEST: Email with 7 characters was allowed but should have been rejected.
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-EM-03: email has 8 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: email8chars
+  - Email: st@x.com (length=8)
+  - Name: John Doe
+  - Specialization: JavaScript
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 167, Username: email8chars, Email: st@x.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 167
+  - Username: email8chars
+  - Email: st@x.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-EM-04: email has 9 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: email9chars
+  - Email: ste@x.com (length=9)
+  - Name: John Doe
+  - Specialization: HTML/CSS
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 168, Username: email9chars, Email: ste@x.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 168
+  - Username: email9chars
+  - Email: ste@x.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-EM-05: email has 49 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: email49chars
+  - Email: steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@gmail.com (length=49)
+  - Name: Steve Jobs
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 169, Username: email49chars, Email: steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@gmail.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 169
+  - Username: email49chars
+  - Email: steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@gmail.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-EM-06: email has 50 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: email50chars
+  - Email: steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@gmail.com (length=50)
+  - Name: Steve Jobs
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 170, Username: email50chars, Email: steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@gmail.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 170
+  - Username: email50chars
+  - Email: steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@gmail.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-EM-07: email has 51 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: email51chars
+  - Email: steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@gmail.com (length=51)
+  - Name: Steve Jobs
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 171, Username: email51chars, Email: steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@gmail.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher should NOT have been created
+
+❌ ERROR DURING TEST: Teacher was created despite invalid email length
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-EM-08: email missing domain - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: email_missing_domain
+  - Email: steve@.com
+  - Name: Steve Jobs
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 172, Username: email_missing_domain, Email: steve@.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher should NOT have been created
+
+❌ ERROR DURING TEST: Teacher was created despite invalid email format
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-EM-09: email missing @ symbol - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: email_missing_at
+  - Email: stevegmail.com
+  - Name: Steve Jobs
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 173, Username: email_missing_at, Email: stevegmail.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher should NOT have been created
+
+❌ ERROR DURING TEST: Teacher was created despite invalid email format
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-EM-10: email contains special characters except '@' - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: email_special_char
+  - Email: steve@gmail.com#
+  - Name: Steve Jobs
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 174, Username: email_special_char, Email: steve@gmail.com#
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher should NOT have been created
+
+❌ ERROR DURING TEST: Teacher was created despite invalid email containing special characters
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-EM-11: email is duplicated - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Duplicate Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 175, Username: johnuser1, Email: john@example.com
+
+================================================================================
+
+
+📌 Creating teacher with duplicated email:
+  - Username: johnuser2
+  - Email: john@example.com
+  - Name: John Doe
+  - Specialization: Java
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Duplicate Teacher)
+
+  📋 Number of Staffs: 2
+
+  📝 Details:
+    - ID: 175, Username: johnuser1, Email: john@example.com
+    - ID: 176, Username: johnuser2, Email: john@example.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher should NOT have been created with duplicated email
+
+❌ ERROR DURING TEST: Teacher was created despite duplicated email
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-PW-01: password has empty string - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff_pw01
+  - Email: teststaff_pw01@test.com
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 177, Username: teststaff_pw01, Email: teststaff_pw01@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher should NOT have been created with empty password
+
+❌ ERROR DURING TEST: Teacher was created despite empty password
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-PW-02: password has 7 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff_pw02
+  - Email: teststaff_pw02@test.com
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 178, Username: teststaff_pw02, Email: teststaff_pw02@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher should NOT have been created with password length 7
+
+❌ ERROR DURING TEST: Teacher was created despite password length 7
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-PW-03: password has 8 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff_pw03
+  - Email: teststaff_pw03@test.com
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 179, Username: teststaff_pw03, Email: teststaff_pw03@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 179
+  - Username: teststaff_pw03
+  - Email: teststaff_pw03@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-PW-04: password has 9 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff_pw04
+  - Email: teststaff_pw04@test.com
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 180, Username: teststaff_pw04, Email: teststaff_pw04@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 180
+  - Username: teststaff_pw04
+  - Email: teststaff_pw04@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-PW-05: password has 63 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff_pw05
+  - Email: teststaff_pw05@test.com
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 181, Username: teststaff_pw05, Email: teststaff_pw05@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 181
+  - Username: teststaff_pw05
+  - Email: teststaff_pw05@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-PW-06: password has 64 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff_pw06
+  - Email: teststaff_pw06@test.com
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 182, Username: teststaff_pw06, Email: teststaff_pw06@test.com
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Teacher created with ID: 182
+  - Username: teststaff_pw06
+  - Email: teststaff_pw06@test.com
+
+
+****************************************************************************************************
+
+🔍 T-ADD-PW-07: password has 65 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff_pw07
+  - Email: teststaff_pw07@test.com
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 183, Username: teststaff_pw07, Email: teststaff_pw07@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher created but expected failure due to password length > 64
+
+❌ ERROR DURING TEST: Teacher creation should fail due to password length > 64
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-PW-08: password missing uppercase letter - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff_pw08
+  - Email: teststaff_pw08@test.com
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 184, Username: teststaff_pw08, Email: teststaff_pw08@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher created but expected failure due to missing uppercase letter in password
+
+❌ ERROR DURING TEST: Teacher creation should fail due to missing uppercase letter in password
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-PW-09: password missing lowercase letter - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff_pw09
+  - Email: teststaff_pw09@test.com
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 185, Username: teststaff_pw09, Email: teststaff_pw09@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher created but expected failure due to missing lowercase letter in password
+
+❌ ERROR DURING TEST: Teacher creation should fail due to missing lowercase letter in password
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-PW-10: password missing digit - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff_pw10
+  - Email: teststaff_pw10@test.com
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 186, Username: teststaff_pw10, Email: teststaff_pw10@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher created but expected failure due to missing digit in password
+
+❌ ERROR DURING TEST: Teacher creation should fail due to missing digit in password
+
+
+
+****************************************************************************************************
+
+🔍 T-ADD-PW-11: password missing special characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Staffs: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststaff_pw11
+  - Email: teststaff_pw11@test.com
+  - Name: John Doe
+  - Specialization: Python
+  - Status: active
+
+✅ User has successfully linked staff object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Staffs: 1
+
+  📝 Details:
+    - ID: 187, Username: teststaff_pw11, Email: teststaff_pw11@test.com
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Teacher created but expected failure due to missing special character in password
+
+❌ ERROR DURING TEST: Teacher creation should fail due to missing special character in password
+
+
+
+====================================================================================================
+TEST RESULTS SUMMARY
+====================================================================================================
+
+❌ ERROR: first_name has empty string - ERROR - Teacher creation should fail for empty first_name
+✅ COMPLETED: first_name has 1 character - SUCCESS
+✅ COMPLETED: first_name has 2 characters - SUCCESS
+✅ COMPLETED: first_name has 49 characters - SUCCESS
+✅ COMPLETED: first_name has 50 characters - SUCCESS
+❌ ERROR: first_name has 51 characters - ERROR - Teacher creation should fail for first_name length > 50 characters
+❌ ERROR: first_name contains digits - ERROR - Teacher creation should fail for first_name containing digits
+❌ ERROR: first_name contains special characters - ERROR - Teacher creation should fail for first_name containing special characters
+❌ ERROR: last_name has empty string - ERROR - Teacher creation should fail for empty last_name
+✅ COMPLETED: last_name has 1 character - SUCCESS
+✅ COMPLETED: last_name has 2 characters - SUCCESS
+✅ COMPLETED: last_name has 49 characters - SUCCESS
+✅ COMPLETED: last_name has 50 characters - SUCCESS
+❌ ERROR: last_name has 51 characters - ERROR - Teacher created despite invalid last_name length
+❌ ERROR: last_name contains digits - ERROR - Teacher created despite invalid last_name containing digits
+❌ ERROR: last_name contains special characters - ERROR - Teacher created despite invalid last_name containing special characters
+✅ COMPLETED: user_name has empty string - ERROR
+❌ ERROR: user_name has 2 character – ERROR - Teacher created despite username length < 3
+✅ COMPLETED: user_name has 3 characters – SUCCESS
+✅ COMPLETED: user_name has 4 characters – SUCCESS
+✅ COMPLETED: user_name has 29 characters – SUCCESS
+✅ COMPLETED: user_name has 30 characters - SUCCESS
+❌ ERROR: user_name has 31 characters - ERROR - Teacher was created despite username exceeding 30 characters
+❌ ERROR: user_name starts with a digit - ERROR - Teacher was created despite username starting with a digit
+❌ ERROR: user_name contains special characters - ERROR - Teacher was created despite invalid username containing special characters
+✅ COMPLETED: user_name is duplicated - ERROR
+❌ ERROR: email has empty string - ERROR - Empty email was allowed but should have been rejected.
+❌ ERROR: email has 7 character – ERROR - Email with 7 characters was allowed but should have been rejected.
+✅ COMPLETED: email has 8 characters – SUCCESS
+✅ COMPLETED: email has 9 characters – SUCCESS
+✅ COMPLETED: email has 49 characters – SUCCESS
+✅ COMPLETED: email has 50 characters – SUCCESS
+❌ ERROR: email has 51 characters – SUCCESS - Teacher was created despite invalid email length
+❌ ERROR: email missing domain - ERROR - Teacher was created despite invalid email format
+❌ ERROR: email missing @ symbol - ERROR - Teacher was created despite invalid email format
+❌ ERROR: email contains special characters, except “@” - ERROR - Teacher was created despite invalid email containing special characters
+❌ ERROR: email is duplicated - ERROR - Teacher was created despite duplicated email
+❌ ERROR: password has empty string - ERROR - Teacher was created despite empty password
+❌ ERROR: password has 7 character – ERROR - Teacher was created despite password length 7
+✅ COMPLETED: password has 8 characters – SUCCESS
+✅ COMPLETED: password has 9 characters – SUCCESS
+✅ COMPLETED: password has 63 characters – SUCCESS
+✅ COMPLETED: password has 64 characters – SUCCESS
+❌ ERROR: password has 65 characters - ERROR - Teacher creation should fail due to password length > 64
+❌ ERROR: password missing uppercase letter - ERROR - Teacher creation should fail due to missing uppercase letter in password
+❌ ERROR: password missing lowercase letter - ERROR - Teacher creation should fail due to missing lowercase letter in password
+❌ ERROR: password missing digit - ERROR - Teacher creation should fail due to missing digit in password
+❌ ERROR: password missing special characters - ERROR - Teacher creation should fail due to missing special character in password
+
+====================================================================================================
+END OF TEST REPORT

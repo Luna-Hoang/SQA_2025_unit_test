@@ -1,4 +1,4 @@
-ERROR DETECTION TEST REPORT - SESSION - DATE: 06/04/2025 21:40:24
+ERROR DETECTION TEST REPORT - SESSION - DATE: 18/05/2025 11:31:11
 ####################################################################################################
 
 PURPOSE: These tests are designed to detect errors in the original software,
@@ -9,8 +9,7 @@ PURPOSE: These tests are designed to detect errors in the original software,
 
 
 ****************************************************************************************************
-
-🔍 TEST E1: SUCCESSFUL SESSION CREATION WITH START DATE AT LOWER BOUNDARY
+🔍 SM-ADD-SE-01: start date = end date -2 day - SUCCESS.
 ****************************************************************************************************
 
 
@@ -28,7 +27,7 @@ PURPOSE: These tests are designed to detect errors in the original software,
 
 ================================================================================
 
-  📊 BEFORE CREATION (Before Session Creation)
+  📊 BEFORE CREATION (Before Creating Semester)
 
   📋 Number of Sessions: 0
 
@@ -38,32 +37,30 @@ PURPOSE: These tests are designed to detect errors in the original software,
 ================================================================================
 
 
-📌 Creating session with:
-  - Start Date: 2025-05-01
-  - End Date: 2027-03-01
+📌 Creating semester with:
+  - Semester ID: Y001
+  - Semester name: Spring 2025
+  - Start Date: 2025-03-30
+  - End Date: 2025-04-01
 
 
 ================================================================================
 
-  📊 AFTER CREATION (After Session Creation)
+  📊 AFTER CREATION (After Creating Semester)
 
   📋 Number of Sessions: 1
 
   📝 Details:
-    - ID: 116, Start: 2025-05-01, End: 2027-03-01
+    - ID: 236, Start: 2025-03-30, End: 2025-04-01
 
 ================================================================================
 
 
-✅ TEST RESULT: SUCCESS
-  - Session created with ID: 116
-  - Start Date: 2025-05-01
-  - End Date: 2027-03-01
-
+🟢 TEST RESULT: PASSED
+  - Semester was successfully created with start_date = end_date - 2 days
 
 ****************************************************************************************************
-
-🔍 TEST E2: SESSION CREATION WITH START DATE BELOW LOWER BOUNDARY
+🔍 SM-ADD-SE-02: start date = end date -1 day - SUCCESS.
 ****************************************************************************************************
 
 
@@ -81,7 +78,7 @@ PURPOSE: These tests are designed to detect errors in the original software,
 
 ================================================================================
 
-  📊 BEFORE CREATION (Before Session Creation)
+  📊 BEFORE CREATION (Before Creating Semester)
 
   📋 Number of Sessions: 0
 
@@ -91,654 +88,138 @@ PURPOSE: These tests are designed to detect errors in the original software,
 ================================================================================
 
 
-📌 Attempting to create session with:
-  - Start Date: 2025-04-30
-  - End Date: 2027-03-01
-
-✅ TEST RESULT: SUCCESS — Creation failed as expected.
-  - Error: ❌ TEST RESULT: FAILURE — Session should not be created with start date below lower boundary.
-
-
-
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 1
-
-  📝 Details:
-    - ID: 117, Start: 2025-04-30, End: 2027-03-01
-
-================================================================================
-
-
-****************************************************************************************************
-
-🔍 TEST E3: SESSION CREATION WITH START DATE ABOVE LOWER BOUNDARY
-****************************************************************************************************
-
-
-================================================================================
-
-  📊 INITIAL STATE (Initial State)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-================================================================================
-
-  📊 BEFORE CREATION (Before Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-📌 Creating session with:
+📌 Creating semester with:
+  - Semester ID: Y002
+  - Semester name: Summer 2025
   - Start Date: 2025-05-02
-  - End Date: 2027-03-01
+  - End Date: 2025-05-03
 
 
 ================================================================================
 
-  📊 AFTER CREATION (After Session Creation)
+  📊 AFTER CREATION (After Creating Semester)
 
   📋 Number of Sessions: 1
 
   📝 Details:
-    - ID: 118, Start: 2025-05-02, End: 2027-03-01
+    - ID: 237, Start: 2025-05-02, End: 2025-05-03
 
 ================================================================================
 
 
-✅ TEST RESULT: SUCCESS
-  - Session created with ID: 118
+🟢 TEST RESULT: PASSED
+  - Semester was successfully created with start_date = end_date - 1 day
+
+****************************************************************************************************
+🔍 SM-ADD-SE-03: start date = end date - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: Y003
+  - Semester name: Autumn 2025
   - Start Date: 2025-05-02
-  - End Date: 2027-03-01
-
-
-****************************************************************************************************
-
-🔍 TEST E4: SESSION CREATION WITH END DATE AT UPPER BOUNDARY
-****************************************************************************************************
-
-
-================================================================================
-
-  📊 INITIAL STATE (Initial State)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-================================================================================
-
-  📊 BEFORE CREATION (Before Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-📌 Creating session with:
-  - Start Date: 2028-12-31
-  - End Date: 2030-12-31
-
-
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 1
-
-  📝 Details:
-    - ID: 119, Start: 2028-12-31, End: 2030-12-31
-
-================================================================================
-
-
-✅ TEST RESULT: SUCCESS
-  - Session created with ID: 119
-  - Start Date: 2028-12-31
-  - End Date: 2030-12-31
-
-
-****************************************************************************************************
-
-🔍 TEST E5: SESSION CREATION WITH END DATE JUST BELOW UPPER BOUNDARY
-****************************************************************************************************
-
-
-================================================================================
-
-  📊 INITIAL STATE (Initial State)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-================================================================================
-
-  📊 BEFORE CREATION (Before Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-📌 Creating session with:
-  - Start Date: 2029-05-31
-  - End Date: 2030-12-30
-
-
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 1
-
-  📝 Details:
-    - ID: 120, Start: 2029-05-31, End: 2030-12-30
-
-================================================================================
-
-
-✅ TEST RESULT: SUCCESS
-  - Session created with ID: 120
-  - Start Date: 2029-05-31
-  - End Date: 2030-12-30
-
-
-****************************************************************************************************
-
-🔍 TEST E6: SESSION CREATION WITH END DATE ABOVE UPPER BOUNDARY
-****************************************************************************************************
-
-
-================================================================================
-
-  📊 INITIAL STATE (Initial State)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-================================================================================
-
-  📊 BEFORE CREATION (Before Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-📌 Attempting to create session with:
-  - Start Date: 2029-05-31
-  - End Date: 2031-01-01
-
-✅ TEST RESULT: SUCCESS — Creation failed as expected.
-  - Error: ❌ TEST RESULT: FAILURE — Session should not be created with end date above upper boundary.
-
-
-
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 1
-
-  📝 Details:
-    - ID: 121, Start: 2029-05-31, End: 2031-01-01
-
-================================================================================
-
-
-****************************************************************************************************
-
-🔍 TEST E7: SESSION CREATION WITH END DATE = START DATE + 2 YEARS
-****************************************************************************************************
-
-
-================================================================================
-
-  📊 INITIAL STATE (Initial State)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-================================================================================
-
-  📊 BEFORE CREATION (Before Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-📌 Creating session with:
-  - Start Date: 2025-05-01
-  - End Date: 2027-05-01
-
-
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 1
-
-  📝 Details:
-    - ID: 122, Start: 2025-05-01, End: 2027-05-01
-
-================================================================================
-
-
-✅ TEST RESULT: SUCCESS
-  - Session created with ID: 122
-  - Start Date: 2025-05-01
-  - End Date: 2027-05-01
-
-
-****************************************************************************************************
-
-🔍 TEST E8: SESSION CREATION WITH END DATE = START DATE + 2 YEARS + 1 DAY
-****************************************************************************************************
-
-
-================================================================================
-
-  📊 INITIAL STATE (Initial State)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-================================================================================
-
-  📊 BEFORE CREATION (Before Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-📌 Attempting to create session with:
-  - Start Date: 2025-05-01
-  - End Date: 2027-05-02
-
-✅ TEST RESULT: SUCCESS — Creation failed as expected.
-  - Error: ❌ TEST RESULT: FAILURE — Session should not be created when end date exceeds 2 years from start.
-
-
-
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 1
-
-  📝 Details:
-    - ID: 123, Start: 2025-05-01, End: 2027-05-02
-
-================================================================================
-
-
-****************************************************************************************************
-
-🔍 TEST E9: SESSION CREATION WITH END DATE = START DATE + 2 YEARS - 1 DAY
-****************************************************************************************************
-
-
-================================================================================
-
-  📊 INITIAL STATE (Initial State)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-================================================================================
-
-  📊 BEFORE CREATION (Before Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-📌 Creating session with:
-  - Start Date: 2025-05-01
-  - End Date: 2027-04-30
-
-
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 1
-
-  📝 Details:
-    - ID: 124, Start: 2025-05-01, End: 2027-04-30
-
-================================================================================
-
-
-✅ TEST RESULT: SUCCESS
-  - Session created with ID: 124
-  - Start Date: 2025-05-01
-  - End Date: 2027-04-30
-
-
-****************************************************************************************************
-
-🔍 TEST E10: SESSION CREATION WITH END DATE EQUAL TO START DATE (LOWER BOUNDARY)
-****************************************************************************************************
-
-
-================================================================================
-
-  📊 INITIAL STATE (Initial State)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-================================================================================
-
-  📊 BEFORE CREATION (Before Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-📌 Attempting to create session with:
-  - Start Date: 2025-05-01
-  - End Date: 2025-05-01
-
-✅ TEST RESULT: SUCCESS — Creation failed as expected.
-  - Error: ❌ TEST RESULT: FAILURE — Session should not be created when end date equals start date.
-
-
-
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 1
-
-  📝 Details:
-    - ID: 125, Start: 2025-05-01, End: 2025-05-01
-
-================================================================================
-
-
-****************************************************************************************************
-
-🔍 TEST E11: SESSION CREATION WITH END DATE EQUAL TO START DATE (UPPER BOUNDARY)
-****************************************************************************************************
-
-
-================================================================================
-
-  📊 INITIAL STATE (Initial State)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-================================================================================
-
-  📊 BEFORE CREATION (Before Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-📌 Attempting to create session with:
-  - Start Date: 2030-12-31
-  - End Date: 2030-12-31
-
-✅ TEST RESULT: SUCCESS — Creation failed as expected.
-  - Error: ❌ TEST RESULT: FAILURE — Session should not be created when end date equals start date at upper boundary.
-
-
-
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 1
-
-  📝 Details:
-    - ID: 126, Start: 2030-12-31, End: 2030-12-31
-
-================================================================================
-
-
-****************************************************************************************************
-
-🔍 TEST E12: SESSION CREATION WITH END DATE BEFORE START DATE (LOWER BOUNDARY)
-****************************************************************************************************
-
-
-================================================================================
-
-  📊 INITIAL STATE (Initial State)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-================================================================================
-
-  📊 BEFORE CREATION (Before Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-📌 Attempting to create session with:
-  - Start Date: 2025-05-01
-  - End Date: 2025-04-30
-
-✅ TEST RESULT: SUCCESS — Creation failed as expected.
-  - Error: ❌ TEST RESULT: FAILURE — Session should not be created when end date is before start date.
-
-
-
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 1
-
-  📝 Details:
-    - ID: 127, Start: 2025-05-01, End: 2025-04-30
-
-================================================================================
-
-
-****************************************************************************************************
-
-🔍 TEST E13: SESSION CREATION WITH END DATE = START DATE + 1 DAY (LOWER BOUNDARY)
-****************************************************************************************************
-
-
-================================================================================
-
-  📊 INITIAL STATE (Initial State)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-================================================================================
-
-  📊 BEFORE CREATION (Before Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-📌 Creating session with:
-  - Start Date: 2025-05-01
   - End Date: 2025-05-02
 
 
 ================================================================================
 
-  📊 AFTER CREATION (After Session Creation)
+  📊 AFTER CREATION (After Creating Semester)
 
   📋 Number of Sessions: 1
 
   📝 Details:
-    - ID: 128, Start: 2025-05-01, End: 2025-05-02
+    - ID: 238, Start: 2025-05-02, End: 2025-05-02
 
 ================================================================================
 
 
-✅ TEST RESULT: SUCCESS
-  - Session created with ID: 128
-  - Start Date: 2025-05-01
+🔴 TEST RESULT: FAILED
+  - Semester was created despite start_date = end_date
+
+❌ ERROR DURING TEST: Semester creation should fail when start_date is equal to end_date
+
+
+****************************************************************************************************
+🔍 SM-ADD-SE-04: start date = end date + 1 day - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: Y004
+  - Semester name: Fall 2025
+  - Start Date: 2025-05-03
   - End Date: 2025-05-02
 
 
-****************************************************************************************************
-
-🔍 TEST E14: SESSION CREATION WITH END DATE BEFORE START DATE (UPPER BOUNDARY)
-****************************************************************************************************
-
-
 ================================================================================
 
-  📊 INITIAL STATE (Initial State)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-================================================================================
-
-  📊 BEFORE CREATION (Before Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
-
-📌 Attempting to create session with:
-  - Start Date: 2030-12-31
-  - End Date: 2030-12-30
-
-✅ TEST RESULT: SUCCESS — Creation failed as expected.
-  - Error: ❌ TEST RESULT: FAILURE — Session should not be created when end date is before start date at upper boundary.
-
-
-
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
+  📊 AFTER CREATION (After Creating Semester)
 
   📋 Number of Sessions: 1
 
   📝 Details:
-    - ID: 129, Start: 2030-12-31, End: 2030-12-30
+    - ID: 239, Start: 2025-05-03, End: 2025-05-02
 
 ================================================================================
 
 
-****************************************************************************************************
+🔴 TEST RESULT: FAILED
+  - Semester was created despite start_date being after end_date
 
-🔍 TEST E15: SESSION CREATION WITH END DATE = START DATE + 1 DAY AT UPPER BOUNDARY
+❌ ERROR DURING TEST: Semester creation should fail when start_date is after end_date
+
+
+****************************************************************************************************
+🔍 SM-ADD-SE-05: start date = end date + 2 days - ERROR.
 ****************************************************************************************************
 
 
@@ -756,7 +237,7 @@ PURPOSE: These tests are designed to detect errors in the original software,
 
 ================================================================================
 
-  📊 BEFORE CREATION (Before Session Creation)
+  📊 BEFORE CREATION (Before Creating Semester)
 
   📋 Number of Sessions: 0
 
@@ -766,30 +247,33 @@ PURPOSE: These tests are designed to detect errors in the original software,
 ================================================================================
 
 
-📌 Attempting to create session with:
-  - Start Date: 2030-12-31
-  - End Date: 2031-01-01
-
-✅ TEST RESULT: SUCCESS — Creation failed as expected.
-  - Error: ❌ TEST RESULT: FAILURE — Session should not be created when end date exceeds upper boundary by 1 day.
-
+📌 Creating semester with:
+  - Semester ID: Y005
+  - Semester name: Winter 2025
+  - Start Date: 2025-05-04
+  - End Date: 2025-05-02
 
 
 ================================================================================
 
-  📊 AFTER CREATION (After Session Creation)
+  📊 AFTER CREATION (After Creating Semester)
 
   📋 Number of Sessions: 1
 
   📝 Details:
-    - ID: 130, Start: 2030-12-31, End: 2031-01-01
+    - ID: 240, Start: 2025-05-04, End: 2025-05-02
 
 ================================================================================
 
 
-****************************************************************************************************
+🔴 TEST RESULT: FAILED
+  - Semester was created despite start_date being after end_date
 
-🔍 TEST E16: SESSION CREATION WITH MISSING START DATE
+❌ ERROR DURING TEST: Semester creation should fail when start_date is after end_date
+
+
+****************************************************************************************************
+🔍 SM-ADD-SE-06: Empty start date - ERROR.
 ****************************************************************************************************
 
 
@@ -807,7 +291,7 @@ PURPOSE: These tests are designed to detect errors in the original software,
 
 ================================================================================
 
-  📊 BEFORE CREATION (Before Session Creation)
+  📊 BEFORE CREATION (Before Creating Semester)
 
   📋 Number of Sessions: 0
 
@@ -817,29 +301,21 @@ PURPOSE: These tests are designed to detect errors in the original software,
 ================================================================================
 
 
-📌 Attempting to create session with missing start date:
+📌 Creating semester with:
+  - Semester ID: Y006
+  - Semester name: Fall 2025
   - Start Date: None
-  - End Date: 2030-12-31
-
-✅ TEST RESULT: SUCCESS — Creation failed as expected.
-  - Error: NOT NULL constraint failed: student_management_app_sessionyearmodel.session_start_year
+  - End Date: 2025-05-02
 
 
-================================================================================
+❌ ERROR CREATING SEMESTER: NOT NULL constraint failed: student_management_app_sessionyearmodel.session_start_year
 
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to empty start_date
+  - Error message: NOT NULL constraint failed: student_management_app_sessionyearmodel.session_start_year
 
 ****************************************************************************************************
-
-🔍 TEST E17: SESSION CREATION WITH MISSING END DATE
+🔍 SM-ADD-SE-07: Empty end date - ERROR.
 ****************************************************************************************************
 
 
@@ -857,7 +333,7 @@ PURPOSE: These tests are designed to detect errors in the original software,
 
 ================================================================================
 
-  📊 BEFORE CREATION (Before Session Creation)
+  📊 BEFORE CREATION (Before Creating Semester)
 
   📋 Number of Sessions: 0
 
@@ -867,29 +343,21 @@ PURPOSE: These tests are designed to detect errors in the original software,
 ================================================================================
 
 
-📌 Attempting to create session with missing end date:
-  - Start Date: 2025-05-01
+📌 Creating semester with:
+  - Semester ID: Y007
+  - Semester name: Fall 2025
+  - Start Date: 2025-05-03
   - End Date: None
 
-✅ TEST RESULT: SUCCESS — Creation failed as expected.
-  - Error: NOT NULL constraint failed: student_management_app_sessionyearmodel.session_end_year
 
+❌ ERROR CREATING SEMESTER: NOT NULL constraint failed: student_management_app_sessionyearmodel.session_end_year
 
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to empty end_date
+  - Error message: NOT NULL constraint failed: student_management_app_sessionyearmodel.session_end_year
 
 ****************************************************************************************************
-
-🔍 TEST E18: SESSION CREATION WITH WRONG DATE FORMAT (SLASHES)
+🔍 SM-ADD-SE-08: wrong format with slashes - ERROR.
 ****************************************************************************************************
 
 
@@ -907,7 +375,7 @@ PURPOSE: These tests are designed to detect errors in the original software,
 
 ================================================================================
 
-  📊 BEFORE CREATION (Before Session Creation)
+  📊 BEFORE CREATION (Before Creating Semester)
 
   📋 Number of Sessions: 0
 
@@ -917,29 +385,21 @@ PURPOSE: These tests are designed to detect errors in the original software,
 ================================================================================
 
 
-📌 Attempting to create session with wrong date format (slashes):
-  - Start Date: 2025/01/01
-  - End Date: 2027/01/01
+📌 Creating semester with:
+  - Semester ID: Y008
+  - Semester name: Session with wrong date format
+  - Start Date (string): 2025/01/01
+  - End Date (string): 2027/01/01
 
-✅ TEST RESULT: SUCCESS — Creation failed as expected.
-  - Error: ['“2025/01/01” value has an invalid date format. It must be in YYYY-MM-DD format.']
 
+❌ ERROR PARSING DATES: time data '2025/01/01' does not match format '%Y-%m-%d'
 
-================================================================================
-
-  📊 AFTER CREATION (After Session Creation)
-
-  📋 Number of Sessions: 0
-
-  📝 Details:
-    (No data)
-
-================================================================================
-
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to wrong date format
+  - Error message: time data '2025/01/01' does not match format '%Y-%m-%d'
 
 ****************************************************************************************************
-
-🔍 TEST E19: SESSION CREATION WITH WRONG DATE FORMAT (DD-MM-YYYY)
+🔍 SM-ADD-SE-09: wrong format with DD-MM-YYYY - ERROR.
 ****************************************************************************************************
 
 
@@ -957,7 +417,7 @@ PURPOSE: These tests are designed to detect errors in the original software,
 
 ================================================================================
 
-  📊 BEFORE CREATION (Before Session Creation)
+  📊 BEFORE CREATION (Before Creating Semester)
 
   📋 Number of Sessions: 0
 
@@ -967,17 +427,27 @@ PURPOSE: These tests are designed to detect errors in the original software,
 ================================================================================
 
 
-📌 Attempting to create session with wrong date format (DD-MM-YYYY):
-  - Start Date: 31-08-2024
-  - End Date: 01-07-2026
+📌 Creating semester with:
+  - Semester ID: Y009
+  - Semester name: Wrong Date Format - DD-MM-YYYY
+  - Start Date (string): 31-08-2024
+  - End Date (string): 01-07-2026
 
-✅ TEST RESULT: SUCCESS — Creation failed as expected.
-  - Error: ['“31-08-2024” value has an invalid date format. It must be in YYYY-MM-DD format.']
+
+❌ ERROR PARSING DATES: time data '31-08-2024' does not match format '%Y-%m-%d'
+
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to wrong date format
+  - Error message: time data '31-08-2024' does not match format '%Y-%m-%d'
+
+****************************************************************************************************
+🔍 SM-ADD-SE-10: start_date and end_date are duplicated - ERROR.
+****************************************************************************************************
 
 
 ================================================================================
 
-  📊 AFTER CREATION (After Session Creation)
+  📊 INITIAL STATE (Initial State)
 
   📋 Number of Sessions: 0
 
@@ -987,51 +457,541 @@ PURPOSE: These tests are designed to detect errors in the original software,
 ================================================================================
 
 
-****************************************************************************************************
+================================================================================
 
-🔍 TEST E20: DUPLICATE SESSION CREATION WITH SAME DATES
-****************************************************************************************************
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
 
 
-📌 Creating initial session with:
+📌 Creating semester with:
+  - Semester ID: Y010
+  - Semester name: Duplicated Semester Dates
   - Start Date: 2025-05-01
-  - End Date: 2027-03-01
-
-✅ Initial session created with ID: 131
+  - End Date: 2025-05-03
 
 
 ================================================================================
 
-  📊 BEFORE CREATION (Before Duplicate Session Creation)
+  📊 AFTER CREATION (After Creating Semester)
 
   📋 Number of Sessions: 1
 
   📝 Details:
-    - ID: 131, Start: 2025-05-01, End: 2027-03-01
+    - ID: 241, Start: 2025-05-01, End: 2025-05-03
 
 ================================================================================
 
 
-📌 Attempting to create duplicate session with same dates:
-  - Start Date: 2025-05-01
-  - End Date: 2027-03-01
+🔴 TEST RESULT: FAILED
+  - Semester was created despite duplicated start_date and end_date
 
-✅ TEST RESULT: SUCCESS — Duplicate creation failed as expected.
-  - Error: ❌ TEST RESULT: FAILURE — Duplicate session should not be created.
+❌ ERROR DURING TEST: Semester creation should fail when start_date and end_date are already in use
 
+
+****************************************************************************************************
+🔍 SM-ADD-ID-01: semester_id has empty string - ERROR.
+****************************************************************************************************
 
 
 ================================================================================
 
-  📊 AFTER CREATION (After Duplicate Session Creation)
+  📊 INITIAL STATE (Initial State)
 
-  📋 Number of Sessions: 2
+  📋 Number of Sessions: 0
 
   📝 Details:
-    - ID: 131, Start: 2025-05-01, End: 2027-03-01
-    - ID: 132, Start: 2025-05-01, End: 2027-03-01
+    (No data)
 
 ================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: '' (empty)
+  - Semester name: Spring 2025
+  - Start Date: 2025-03-01
+  - End Date: 2025-06-01
+
+
+❌ ERROR CREATING SEMESTER: Please input semester_id
+
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to empty semester_id
+  - Error message: Please input semester_id
+
+****************************************************************************************************
+🔍 SM-ADD-ID-02: semester_id has no digit - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: Y
+  - Semester name: Spring 2025
+  - Start Date: 2025-03-01
+  - End Date: 2025-06-01
+
+
+❌ ERROR CREATING SEMESTER: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to semester_id has no digit
+  - Error message: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+****************************************************************************************************
+🔍 SM-ADD-ID-03: semester_id has 2 digits - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: Y12
+  - Semester name: Spring 2025
+  - Start Date: 2025-03-01
+  - End Date: 2025-06-01
+
+
+❌ ERROR CREATING SEMESTER: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to semester_id has 2 digits
+  - Error message: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+****************************************************************************************************
+🔍 SM-ADD-ID-04: semester_id has 3 digits - SUCCESS.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: Y123
+  - Semester name: Spring 2025
+  - Start Date: 2025-03-01
+  - End Date: 2025-06-01
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Semester)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 242, Start: 2025-03-01, End: 2025-06-01
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Semester was successfully created with valid semester_id
+
+****************************************************************************************************
+🔍 SM-ADD-ID-05: semester_id has 4 digits - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: Y1234
+  - Semester name: Spring 2025
+  - Start Date: 2025-03-01
+  - End Date: 2025-06-01
+
+
+❌ ERROR CREATING SEMESTER: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to invalid semester_id format
+  - Error message: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+****************************************************************************************************
+🔍 SM-ADD-ID-06: semester_id has non-digit characters - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: Y1A-
+  - Semester name: Spring 2025
+  - Start Date: 2025-03-01
+  - End Date: 2025-06-01
+
+
+❌ ERROR CREATING SEMESTER: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to invalid semester_id format (non-digit characters)
+  - Error message: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+****************************************************************************************************
+🔍 SM-ADD-ID-07: semester_id has lowercase letter - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: y123
+  - Semester name: Spring 2025
+  - Start Date: 2025-03-01
+  - End Date: 2025-06-01
+
+
+❌ ERROR CREATING SEMESTER: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to lowercase letter in semester_id
+  - Error message: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+****************************************************************************************************
+🔍 SM-ADD-ID-08: semester_id has 3 digits are zero - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: Y000
+  - Semester name: Spring 2025
+  - Start Date: 2025-03-01
+  - End Date: 2025-06-01
+
+
+❌ ERROR CREATING SEMESTER: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to semester_id digits are 000
+  - Error message: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+****************************************************************************************************
+🔍 SM-ADD-ID-09: semester_id has 3 digits are 9 - SUCCESS.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: Y999
+  - Semester name: Fall 2025
+  - Start Date: 2025-09-01
+  - End Date: 2026-01-15
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Semester)
+
+  📋 Number of Sessions: 1
+
+  📝 Details:
+    - ID: 243, Start: 2025-09-01, End: 2026-01-15
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Semester was successfully created with semester_id having digits '999'
+
+****************************************************************************************************
+🔍 SM-ADD-ID-010: semester_id contains whitespace - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: Y 12
+  - Semester name: Winter 2025
+  - Start Date: 2025-01-01
+  - End Date: 2025-04-01
+
+
+❌ ERROR CREATING SEMESTER: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to whitespace in semester_id
+  - Error message: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+****************************************************************************************************
+🔍 SM-ADD-ID-011: semester_id does not start with Y - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Semester)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating semester with:
+  - Semester ID: 1234
+  - Semester name: Fall 2025
+  - Start Date: 2025-09-01
+  - End Date: 2025-12-15
+
+
+❌ ERROR CREATING SEMESTER: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+🟢 TEST RESULT: PASSED
+  - Semester creation failed as expected due to semester_id not starting with Y
+  - Error message: semester_id must start with an uppercase Y; followed by exactly 3 digits (from 001 -> 999); no lowercase letters, special characters, or spaces allowed
+
+****************************************************************************************************
+🔍 SM-ADD-ID-012: semester_id is duplicated - ERROR.
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Sessions: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+❌ ERROR DURING TEST: Field 'id' expected a number but got 'Y123'.
 
 
 
@@ -1039,26 +999,28 @@ PURPOSE: These tests are designed to detect errors in the original software,
 TEST RESULTS SUMMARY
 ====================================================================================================
 
-✅ COMPLETED: start date is exactly at lower boundary
-✅ COMPLETED: start date = lower boundary -1 day
-✅ COMPLETED: start date = lower boundary +1 day
-✅ COMPLETED: end date is exactly at upper boundary
-✅ COMPLETED: end date = upper boundary -1 day
-✅ COMPLETED: end date = upper boundary +1 day
-✅ COMPLETED: end date = start date + 2 years
-✅ COMPLETED: end date = start date + 2 years +1 day
-✅ COMPLETED: end date = start date + 2 years -1 day
-✅ COMPLETED: end date = start date at lower boundary
-✅ COMPLETED: end date = start date at upper boundary
-✅ COMPLETED: end date = start date – 1 day at lower boundary
-✅ COMPLETED: end date = start date + 1 day at lower boundary
-✅ COMPLETED: end date = start date – 1 day at upper boundary
-✅ COMPLETED: end date = start date + 1 day at upper boundary
-✅ COMPLETED: missing start date
-✅ COMPLETED: missing end date
-✅ COMPLETED: wrong format with slashes
-✅ COMPLETED: wrong format with DD-MM-YYYY
-✅ COMPLETED: start_date and end_date are duplicated
+✅ COMPLETED: start date = end date -2 day - SUCCESS
+✅ COMPLETED: start date = end date -1 day - SUCCESS
+❌ ERROR: start date = end date - ERROR - Semester creation should fail when start_date is equal to end_date
+❌ ERROR: start date = end date + 1 day - ERROR - Semester creation should fail when start_date is after end_date
+❌ ERROR: start date = end date + 2 days - ERROR - Semester creation should fail when start_date is after end_date
+✅ COMPLETED: Empty start date - ERROR
+✅ COMPLETED: Empty end date - ERROR
+✅ COMPLETED: wrong format with slashes - ERROR
+✅ COMPLETED: wrong format with DD-MM-YYYY - ERROR
+❌ ERROR: start_date and end_date are duplicated - ERROR - Semester creation should fail when start_date and end_date are already in use
+✅ COMPLETED: semester_id has empty string - ERROR
+✅ COMPLETED: semester_id has no digit – ERROR
+✅ COMPLETED: semester_id has 2 digits – ERROR
+✅ COMPLETED: semester_id has 3 digits - SUCCESS
+✅ COMPLETED: semester_id has 4 digits - ERROR
+✅ COMPLETED: semester_id has non-digit characters
+✅ COMPLETED: semester_id has lowercase letter – ERROR
+✅ COMPLETED: semester_id has 3 digits are zero- ERROR
+✅ COMPLETED: semester_id has 3 digits are 9 - SUCCESS
+✅ COMPLETED: semester_id contains whitespace – ERROR
+✅ COMPLETED: semester_id does not start with SB - ERROR
+❌ ERROR: semester_id is duplicated - ERROR - Field 'id' expected a number but got 'Y123'.
 
 ====================================================================================================
 END OF TEST REPORT

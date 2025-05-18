@@ -33,26 +33,28 @@ def run_and_capture_tests():
         
         # Create and run each test individually to record complete results
         test_cases = [
-            ('test_E1_session_creation_lower_boundary_success', 'start date is exactly at lower boundary'),
-            ('test_E2_session_creation_start_date_below_lower_boundary', 'start date = lower boundary -1 day'),
-            ('test_E3_session_creation_start_date_above_lower_boundary_success', 'start date = lower boundary +1 day'),
-            ('test_E4_session_creation_end_date_at_upper_boundary_success', 'end date is exactly at upper boundary'),
-            ('test_E5_session_creation_end_date_just_below_upper_boundary_success', 'end date = upper boundary -1 day'),
-            ('test_E6_session_creation_end_date_above_upper_boundary_error', 'end date = upper boundary +1 day'),
-            ('test_E7_session_creation_end_date_equals_start_plus_2_years_success', 'end date = start date + 2 years'),
-            ('test_E8_session_creation_end_date_exceeds_2_years_error', 'end date = start date + 2 years +1 day'),
-            ('test_E9_session_creation_end_date_less_than_2_years_success', 'end date = start date + 2 years -1 day'),
-            ('test_E10_session_creation_end_date_equals_start_date_error', 'end date = start date at lower boundary'),
-            ('test_E11_session_creation_end_date_equals_start_date_at_upper_boundary_error', 'end date = start date at upper boundary'),
-            ('test_E12_session_creation_end_date_before_start_date_error', 'end date = start date – 1 day at lower boundary'),
-            ('test_E13_session_creation_end_date_just_after_start_date_success', 'end date = start date + 1 day at lower boundary'),
-            ('test_E14_session_creation_end_date_before_start_date_at_upper_boundary_error', 'end date = start date – 1 day at upper boundary'),
-            ('test_E15_session_creation_end_date_just_after_upper_boundary_error', 'end date = start date + 1 day at upper boundary'),
-            ('test_E16_session_creation_missing_start_date_error', 'missing start date'),
-            ('test_E17_session_creation_missing_end_date_error', 'missing end date'),
-            ('test_E18_session_creation_wrong_format_slashes_error', 'wrong format with slashes'),
-            ('test_E19_session_creation_wrong_format_dd_mm_yyyy_error', 'wrong format with DD-MM-YYYY'),
-            ('test_E20_session_creation_duplicate_dates_error', 'start_date and end_date are duplicated')
+            ('SM_ADD_SE_01_start_date_is_end_date_minus_2_day_SUCCESS', 'start date = end date -2 day - SUCCESS'),
+            ('SM_ADD_SE_02_start_date_is_end_date_minus_1_day_SUCCESS','start date = end date -1 day - SUCCESS'),
+            ('SM_ADD_SE_03_start_date_equal_end_date_ERROR','start date = end date - ERROR'),
+            ('SM_ADD_SE_04_start_date_greater_than_end_date_ERROR','start date = end date + 1 day - ERROR'),
+            ('SM_ADD_SE_05_start_date_greater_than_end_date_plus_2_days_ERROR','start date = end date + 2 days - ERROR'),
+            ('SM_ADD_SE_06_empty_start_date_ERROR','Empty start date - ERROR'),
+            ('SM_ADD_SE_07_empty_end_date_ERROR','Empty end date - ERROR'),
+            ('SM_ADD_SE_08_wrong_format_with_slashes_ERROR','wrong format with slashes - ERROR'),
+            ('SM_ADD_SE_09_wrong_format_with_dd_mm_yyyy_ERROR','wrong format with DD-MM-YYYY - ERROR'),
+            ('SM_ADD_SE_10_start_and_end_date_are_duplicated_ERROR','start_date and end_date are duplicated - ERROR'),
+            ('SM_ADD_ID_01_semester_id_empty_ERROR','semester_id has empty string - ERROR'),
+            ('SM_ADD_ID_02_semester_id_no_digit_ERROR','semester_id has no digit – ERROR'),
+            ('SM_ADD_ID_03_semester_id_two_digits_ERROR','semester_id has 2 digits – ERROR'),
+            ('SM_ADD_ID_04_semester_id_three_digits_SUCCESS','semester_id has 3 digits - SUCCESS'),
+            ('SM_ADD_ID_05_semester_id_four_digits_ERROR','semester_id has 4 digits - ERROR'),
+            ('SM_ADD_ID_06_semester_id_has_non_digit_characters_ERROR','semester_id has non-digit characters'),
+            ('SM_ADD_ID_07_semester_id_has_lowercase_letter_ERROR','semester_id has lowercase letter – ERROR'),
+            ('SM_ADD_ID_08_semester_id_3_digits_are_zero_ERROR','semester_id has 3 digits are zero- ERROR'),
+            ('SM_ADD_ID_09_semester_id_3_digits_are_9_SUCCESS','semester_id has 3 digits are 9 - SUCCESS'),
+            ('SM_ADD_ID_10_semester_id_contains_whitespace_ERROR','semester_id contains whitespace – ERROR'),
+            ('SM_ADD_ID_11_semester_id_not_start_with_Y_ERROR','semester_id does not start with SB - ERROR'),
+            ('SM_ADD_ID_12_semester_id_is_duplicated_ERROR','semester_id is duplicated - ERROR')
         ]
         
         test_results = []

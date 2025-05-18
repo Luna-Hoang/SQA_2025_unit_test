@@ -33,17 +33,35 @@ def run_and_capture_tests():
         
         # Create and run each test individually to record complete results
         test_cases = [
-            ('test_1_successful_subject_creation', 'Successfully create a new subject'),
-            ('test_2_duplicate_subject_name', 'Create subject with duplicate name'),
-            ('test_3_missing_required_values', 'Create subject with missing required values'),
-            ('test_4_subject_name_length', 'Create subject with name too long'),
-            ('test_5_invalid_course_id', 'Create subject with invalid courseID'),
-            ('test_6_invalid_subject_name_characters', 'Create subject with invalid characters in name')
+            ('S_ADD_ID_01_subject_id_has_empty_string_ERROR', 'subject_id has empty string - ERROR'),
+            ('S_ADD_ID_02_subject_id_has_no_digit_ERROR', 'subject_id has no digit - ERROR'),
+            ('S_ADD_ID_03_subject_id_has_two_digits_ERROR', 'subject_id has 2 digits – ERROR'),
+            ('S_ADD_ID_04_subject_id_has_three_digits_SUCCESS','subject_id has 3 digits - SUCCESS'),
+            ('S_ADD_ID_05_subject_id_has_four_digits_ERROR','subject_id has 4 digits - ERROR'),
+            ('S_ADD_ID_06_subject_id_has_nondigit_characters_ERROR','subject_id has non-digit characters'),
+            ('S_ADD_ID_07_subject_id_has_lowercase_letter_ERROR','subject_id has lowercase letter – ERROR'),
+            ('S_ADD_ID_08_subject_id_has_all_zeros_digits_ERROR','subject_id has 3 digits are zero- ERROR'),
+            ('S_ADD_ID_09_subject_id_has_digits_999_SUCCESS','subject_id has 3 digits are 9 - SUCCESS'),
+            ('S_ADD_ID_10_subject_id_contains_whitespace_ERROR','subject_id contains whitespace – ERROR'),
+            ('S_ADD_ID_11_subject_id_not_start_SB_ERROR','subject_id does not start with SB - ERROR'),
+            ('S_ADD_ID_12_subject_id_is_duplicated_ERROR','subject_id is duplicated - ERROR'),
+            ('S_ADD_NA_01_subject_name_empty_string_ERROR','subject_name has empty string - ERROR'),
+            ('S_ADD_NA_02_subject_name_one_char_ERROR','subject_name has 1 characters - ERROR'),
+            ('S_ADD_NA_03_subject_name_two_chars_SUCCESS','subject_name has 2 characters - SUCCESS'),
+            ('S_ADD_NA_04_subject_name_three_chars_SUCCESS','subject_name has 3 characters – SUCCESS'),
+            ('S_ADD_NA_05_subject_name_49_chars_SUCCESS','subject_name has 49 characters - SUCCESS'),
+            ('S_ADD_NA_06_subject_name_50_chars_SUCCESS','subject_name has 50 characters - SUCCESS'),
+            ('S_ADD_NA_07_subject_name_51_chars_ERROR','subject_name has 51 characters - ERROR'),
+            ('S_ADD_NA_08_subject_name_special_char_ERROR','subject_name contains special character - ERROR'),
+            ('S_ADD_NA_09_subject_name_duplicated_ERROR','subject_name is duplicated - ERROR'),
+            ('S_ADD_STA_01_course_id_empty_string_ERROR','course_id has empty string - ERROR'),
+            ('S_ADD_STA_02_course_id_exists_SUCCESS','course_id is existed in the system - SUCCESS'),
+            ('S_ADD_STA_03_course_id_not_exists_ERROR','course_id is not existed in the system - ERROR')
         ]
         
         test_results = []
         
-        print(f"\n\n{'='*100}")
+        print(f"\n{'='*100}")
         print(f"LIST OF TESTS TO RUN:")
         for i, (test_method, test_name) in enumerate(test_cases, 1):
             print(f"🔍 {i}. {test_name}")
@@ -52,11 +70,7 @@ def run_and_capture_tests():
         start_time = datetime.datetime.now()
         print(f"⏱️ STARTING TESTS: {start_time.strftime('%H:%M:%S')}")
         
-        for i, (test_method, test_name) in enumerate(test_cases, 1):
-            print(f"\n\n{'#'*100}")
-            print(f"### TEST {i}: {test_name}")
-            print(f"{'#'*100}\n")
-            
+        for i, (test_method, test_name) in enumerate(test_cases, 1):          
             # Create a separate instance of the test class with an isolated environment
             test_instance = SubjectModelTest(test_method)
             

@@ -1,0 +1,3029 @@
+ERROR DETECTION TEST REPORT - STUDENT - DATE: 17/05/2025 23:26:27
+####################################################################################################
+
+PURPOSE: These tests are designed to detect errors in the original software,
+         NOT to add new validations. Each test will check the actual behavior
+         of the software when faced with different input situations.
+
+####################################################################################################
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-FN-01: first_name has empty string - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Teacher)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating teacher with:
+  - Username: teststudent1
+  - Email: teststudent1@test.com
+  - Name: '' Doe
+  - Gender: 
+  - Address: 
+  - Status: active
+  - Course ID: 224
+  - Session Year ID: 140
+
+❌ User has linked student object, but this should not happen for empty first_name
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Teacher)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 39, Username: teststudent1, Email: teststudent1@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite empty first_name
+
+❌ ERROR DURING TEST: Student creation should fail for empty first_name
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-FN-02: first_name has 1 character - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent2
+  - Email: teststudent2@test.com
+  - Name: 'J' Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 225
+  - Session Year ID: 141
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 40, Username: teststudent2, Email: teststudent2@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 1-character first_name
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-FN-03: first_name has 2 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent3
+  - Email: teststudent3@test.com
+  - Name: 'Jo' Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 226
+  - Session Year ID: 142
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 41, Username: teststudent3, Email: teststudent3@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 2-character first_name
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-FN-04: first_name has 49 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent4
+  - Email: teststudent4@test.com
+  - Name: 'Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn' Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 227
+  - Session Year ID: 143
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 42, Username: teststudent4, Email: teststudent4@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 49-character first_name
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-FN-05: first_name has 50 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent5
+  - Email: teststudent5@test.com
+  - Name: 'Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn' Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 228
+  - Session Year ID: 144
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 43, Username: teststudent5, Email: teststudent5@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 50-character first_name
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-FN-06: first_name has 51 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent6
+  - Email: teststudent6@test.com
+  - Name: 'Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn' Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 229
+  - Session Year ID: 145
+
+❌ User has linked student object, but this should not happen for 51-character first_name
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 44, Username: teststudent6, Email: teststudent6@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite invalid 51-character first_name
+
+❌ ERROR DURING TEST: Student creation should fail for first_name length > 50
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-FN-07: first_name contains digits - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent7
+  - Email: teststudent7@test.com
+  - Name: 'John111' Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 230
+  - Session Year ID: 146
+
+❌ User has linked student object, but this should not happen for first_name with digits
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 45, Username: teststudent7, Email: teststudent7@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite invalid digits in first_name
+
+❌ ERROR DURING TEST: Student creation should fail when first_name contains digits
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-FN-08: first_name contains special characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent8
+  - Email: teststudent8@test.com
+  - Name: 'John@' Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 231
+  - Session Year ID: 147
+
+❌ User has linked student object, but this should not happen for first_name with special characters
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 46, Username: teststudent8, Email: teststudent8@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite invalid special characters in first_name
+
+❌ ERROR DURING TEST: Student creation should fail when first_name contains special characters
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-LN-01: last_name has empty string - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_ln01
+  - Email: teststudent_ln01@test.com
+  - Name: John ''
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 232
+  - Session Year ID: 148
+
+❌ User has linked student object, but this should not happen for empty last_name
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 47, Username: teststudent_ln01, Email: teststudent_ln01@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite empty last_name
+
+❌ ERROR DURING TEST: Student creation should fail when last_name is empty
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-LN-02: last_name has 1 character - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_ln02
+  - Email: teststudent_ln02@test.com
+  - Name: John 'S'
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 233
+  - Session Year ID: 149
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 48, Username: teststudent_ln02, Email: teststudent_ln02@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 1-character last_name
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-LN-03: last_name has 2 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_ln03
+  - Email: teststudent_ln03@test.com
+  - Name: John 'St'
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 234
+  - Session Year ID: 150
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 49, Username: teststudent_ln03, Email: teststudent_ln03@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 2-character last_name
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-LN-04: last_name has 49 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_ln04
+  - Email: teststudent_ln04@test.com
+  - Name: John 'Steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 235
+  - Session Year ID: 151
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 50, Username: teststudent_ln04, Email: teststudent_ln04@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 49-character last_name
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-LN-05: last_name has 50 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_ln05
+  - Email: teststudent_ln05@test.com
+  - Name: John 'Steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 236
+  - Session Year ID: 152
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 51, Username: teststudent_ln05, Email: teststudent_ln05@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 50-character last_name
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-LN-06: last_name has 51 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_ln06
+  - Email: teststudent_ln06@test.com
+  - Name: John 'Steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 237
+  - Session Year ID: 153
+
+❌ User has linked student object, but this should not happen for last_name length > 50
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 52, Username: teststudent_ln06, Email: teststudent_ln06@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite last_name length > 50
+
+❌ ERROR DURING TEST: Student creation should fail for last_name length > 50
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-LN-07: last_name contains digits - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_ln07
+  - Email: teststudent_ln07@test.com
+  - Name: John 'Steve111'
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 238
+  - Session Year ID: 154
+
+❌ User has linked student object, but this should not happen when last_name contains digits
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 53, Username: teststudent_ln07, Email: teststudent_ln07@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite digits in last_name
+
+❌ ERROR DURING TEST: Student creation should fail for digits in last_name
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-LN-08: last_name contains special characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_ln08
+  - Email: teststudent_ln08@test.com
+  - Name: John 'Steve@'
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 239
+  - Session Year ID: 155
+
+❌ User has linked student object, but this should not happen when last_name contains special characters
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 54, Username: teststudent_ln08, Email: teststudent_ln08@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite special characters in last_name
+
+❌ ERROR DURING TEST: Student creation should fail for special characters in last_name
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-UN-01: user_name has empty string - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: ''
+  - Email: teststudent_un01@test.com
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 240
+  - Session Year ID: 156
+
+
+❌ ERROR CREATING STUDENT: The given username must be set
+
+🟢 TEST RESULT: PASSED
+  - Student creation failed as expected due to empty username
+  - Error message: The given username must be set
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-UN-02: user_name has 2 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: 'jo'
+  - Email: teststudent_un02@test.com
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 241
+  - Session Year ID: 157
+
+❌ User has linked student object, but this should not happen for username length 2
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 55, Username: jo, Email: teststudent_un02@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite username length < 3
+
+❌ ERROR DURING TEST: Student creation should fail for username length < 3
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-UN-03: user_name has 3 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: 'joh'
+  - Email: teststudent_un03@test.com
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 242
+  - Session Year ID: 158
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 56, Username: joh, Email: teststudent_un03@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 3-character username
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-UN-04: user_name has 4 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: 'john'
+  - Email: teststudent_un04@test.com
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 243
+  - Session Year ID: 159
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 57, Username: john, Email: teststudent_un04@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 4-character username
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-UN-05: user_name has 29 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: 'johnsteveeeeeeeeeeeeeeeeeeeee'
+  - Email: teststudent_un05@test.com
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 244
+  - Session Year ID: 160
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 58, Username: johnsteveeeeeeeeeeeeeeeeeeeee, Email: teststudent_un05@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 29-character username
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-UN-06: user_name has 30 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: 'johnsteveeeeeeeeeeeeeeeeeeeeee'
+  - Email: teststudent_un06@test.com
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 245
+  - Session Year ID: 161
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 59, Username: johnsteveeeeeeeeeeeeeeeeeeeeee, Email: teststudent_un06@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 30-character username
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-UN-07: user_name has 31 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: 'johnsteveeeeeeeeeeeeeeeeeeeeeee'
+  - Email: teststudent_un07@test.com
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 246
+  - Session Year ID: 162
+
+❌ User has linked student object but should NOT for invalid username length
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 60, Username: johnsteveeeeeeeeeeeeeeeeeeeeeee, Email: teststudent_un07@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite invalid 31-character username
+
+❌ ERROR DURING TEST: Student creation should fail for username longer than 30 characters
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-UN-08: user_name starts with a digit - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: '9johnsteve'
+  - Email: teststudent_un08@test.com
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 247
+  - Session Year ID: 163
+
+❌ User has linked student object but should NOT for username starting with digit
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 61, Username: 9johnsteve, Email: teststudent_un08@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite username starting with digit
+
+❌ ERROR DURING TEST: Student creation should fail for username starting with digits
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-UN-09: user_name contains special characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: 'johnsteve#'
+  - Email: teststudent_un09@test.com
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 248
+  - Session Year ID: 164
+
+❌ User has linked student object but should NOT for username containing special characters
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 62, Username: johnsteve#, Email: teststudent_un09@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite username containing special characters
+
+❌ ERROR DURING TEST: Student creation should fail for username containing special characters
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-UN-10: user_name is duplicated - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: 'john'
+  - Email: teststudent_un10@test.com
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 249
+  - Session Year ID: 165
+
+❌ User has linked student object but username is duplicated, nên không hợp lệ
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 63, Username: john, Email: teststudent_un10@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student được tạo dù username bị trùng
+
+❌ ERROR DURING TEST: Student creation should fail for duplicated username
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-EM-01: email has empty string - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_em01
+  - Email: ''
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 250
+  - Session Year ID: 166
+
+❌ User has linked student object but email is empty, không hợp lệ
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 64, Username: teststudent_em01, Email: , Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student được tạo dù email trống
+
+❌ ERROR DURING TEST: Student creation should fail for empty email
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-EM-02: email has 7 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_em02
+  - Email: 's@x.com'
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 251
+  - Session Year ID: 167
+
+❌ User has linked student object but email length invalid
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 65, Username: teststudent_em02, Email: s@x.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite invalid email length (7 characters)
+
+❌ ERROR DURING TEST: Student creation should fail for email length < 8 characters
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-EM-03: email has 8 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_em03
+  - Email: 'st@x.com'
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 252
+  - Session Year ID: 168
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 66, Username: teststudent_em03, Email: st@x.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with valid 8-character email
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-EM-04: email has 9 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_em04
+  - Email: 'ste@x.com'
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 253
+  - Session Year ID: 169
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 67, Username: teststudent_em04, Email: ste@x.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with valid 9-character email
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-EM-05: email has 49 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_em05
+  - Email: 'steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@gmail.com'
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 254
+  - Session Year ID: 170
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 68, Username: teststudent_em05, Email: steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@gmail.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with valid 49-character email
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-EM-06: email has 50 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_em06
+  - Email: 'steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@gmail.com'
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 255
+  - Session Year ID: 171
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 69, Username: teststudent_em06, Email: steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@gmail.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with valid 50-character email
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-EM-07: email has 51 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_em07
+  - Email: 'steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeea@gmail.com'
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 256
+  - Session Year ID: 172
+
+❌ User has linked student object but this should NOT happen for invalid email length
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 70, Username: teststudent_em07, Email: steveeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeea@gmail.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite invalid email length
+
+❌ ERROR DURING TEST: Student creation should fail for email length > 50 characters
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-EM-08: email missing domain - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_em08
+  - Email: 'steve@.com'
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 257
+  - Session Year ID: 173
+
+❌ User has linked student object but this should NOT happen for invalid email format
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 71, Username: teststudent_em08, Email: steve@.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite invalid email format
+
+❌ ERROR DURING TEST: Student creation should fail for email missing domain
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-EM-09: email missing @ symbol - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_em09
+  - Email: 'stevegmail.com'
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 258
+  - Session Year ID: 174
+
+❌ User has linked student object but this should NOT happen for invalid email format
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 72, Username: teststudent_em09, Email: stevegmail.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite invalid email format
+
+❌ ERROR DURING TEST: Student creation should fail for email missing '@' symbol
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-EM-10: email contains special characters, except '@' - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with:
+  - Username: teststudent_em10
+  - Email: 'steve@gmail.com#'
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 259
+  - Session Year ID: 175
+
+❌ User has linked student object but this should NOT happen for invalid email format
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 73, Username: teststudent_em10, Email: steve@gmail.com#, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite invalid email format
+
+❌ ERROR DURING TEST: Student creation should fail for email containing special characters except '@'
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-EM-11: email is duplicated - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 74, Username: existing_user_john, Email: john@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+📌 Creating student with duplicated email:
+  - Username: teststudent_em11
+  - Email: 'john@test.com'
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 260
+  - Session Year ID: 176
+
+❌ User has linked student object but this should NOT happen for duplicated email
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 2
+
+  📝 Details:
+    - ID: 74, Username: existing_user_john, Email: john@test.com, Course: Default Course, Session Year ID: 1
+    - ID: 75, Username: teststudent_em11, Email: john@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite duplicated email
+
+❌ ERROR DURING TEST: Student creation should fail for duplicated email
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-PW-01: password has empty string - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with empty password:
+  - Username: teststudent_pw01
+  - Email: teststudent_pw01@test.com
+  - Password: '' (empty)
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 261
+  - Session Year ID: 177
+
+❌ User has linked student object but this should NOT happen for empty password
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 76, Username: teststudent_pw01, Email: teststudent_pw01@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite empty password
+
+❌ ERROR DURING TEST: Student creation should fail for empty password
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-PW-02: password has 7 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with 7-character password:
+  - Username: teststudent_pw02
+  - Email: teststudent_pw02@test.com
+  - Password: 'John@12' (7 characters)
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 262
+  - Session Year ID: 178
+
+❌ User has linked student object but this should NOT happen for 7-char password
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 77, Username: teststudent_pw02, Email: teststudent_pw02@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite password length 7
+
+❌ ERROR DURING TEST: Student creation should fail for password length < 8
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-PW-03: password has 8 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with 8-character password:
+  - Username: teststudent_pw03
+  - Email: teststudent_pw03@test.com
+  - Password: 'John@123' (8 characters)
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 263
+  - Session Year ID: 179
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 78, Username: teststudent_pw03, Email: teststudent_pw03@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 8-character password
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-PW-04: password has 9 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with 9-character password:
+  - Username: teststudent_pw04
+  - Email: teststudent_pw04@test.com
+  - Password: 'John@1234' (9 characters)
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 264
+  - Session Year ID: 180
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 79, Username: teststudent_pw04, Email: teststudent_pw04@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 9-character password
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-PW-05: password has 63 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with 63-character password:
+  - Username: teststudent_pw05
+  - Email: teststudent_pw05@test.com
+  - Password: 'Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn@1234' (63 characters)
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 265
+  - Session Year ID: 181
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 80, Username: teststudent_pw05, Email: teststudent_pw05@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 63-character password
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-PW-06: password has 64 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with 64-character password:
+  - Username: teststudent_pw06
+  - Email: teststudent_pw06@test.com
+  - Password: 'Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn@1234' (64 characters)
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 266
+  - Session Year ID: 182
+
+✅ User has successfully linked student object
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 81, Username: teststudent_pw06, Email: teststudent_pw06@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Student was successfully created with 64-character password
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-PW-07: password has 65 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with 65-character password:
+  - Username: teststudent_pw07
+  - Email: teststudent_pw07@test.com
+  - Password: 'Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn@1234' (65 characters)
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 267
+  - Session Year ID: 183
+
+❌ User has linked student object, but should NOT be created with invalid password length
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 82, Username: teststudent_pw07, Email: teststudent_pw07@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite invalid 65-character password length
+
+❌ ERROR DURING TEST: Student creation should fail for password length > 64
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-PW-08: password missing uppercase letter - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with password missing uppercase letter:
+  - Username: teststudent_pw08
+  - Email: teststudent_pw08@test.com
+  - Password: 'john@1234' (missing uppercase)
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 268
+  - Session Year ID: 184
+
+❌ User has linked student object, but should NOT be created without uppercase letter in password
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 83, Username: teststudent_pw08, Email: teststudent_pw08@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite password missing uppercase letter
+
+❌ ERROR DURING TEST: Student creation should fail for password missing uppercase letter
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-PW-09: password missing lowercase letter - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with password missing lowercase letter:
+  - Username: teststudent_pw09
+  - Email: teststudent_pw09@test.com
+  - Password: 'JOHN@1234' (missing lowercase)
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 269
+  - Session Year ID: 185
+
+❌ User has linked student object, but should NOT be created without lowercase letter in password
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 84, Username: teststudent_pw09, Email: teststudent_pw09@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite password missing lowercase letter
+
+❌ ERROR DURING TEST: Student creation should fail for password missing lowercase letter
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-PW-10: password missing digit - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with password missing digit:
+  - Username: teststudent_pw10
+  - Email: teststudent_pw10@test.com
+  - Password: 'John@nnn' (missing digit)
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 270
+  - Session Year ID: 186
+
+❌ User has linked student object, but should NOT be created without digit in password
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 85, Username: teststudent_pw10, Email: teststudent_pw10@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite password missing digit
+
+❌ ERROR DURING TEST: Student creation should fail for password missing digit
+
+Found existing Course with ID=1
+Found existing SessionYear with ID=1
+
+
+****************************************************************************************************
+
+🔍 STU-ADD-PW-11: password missing special characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Student)
+
+  📋 Number of Students: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating student with password missing special characters:
+  - Username: teststudent_pw11
+  - Email: teststudent_pw11@test.com
+  - Password: 'John1234' (missing special character)
+  - Name: John Doe
+  - Gender: Other
+  - Address: 123 Test Street
+  - Status: active
+  - Course ID: 271
+  - Session Year ID: 187
+
+❌ User has linked student object, but should NOT be created without special character in password
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Student)
+
+  📋 Number of Students: 1
+
+  📝 Details:
+    - ID: 86, Username: teststudent_pw11, Email: teststudent_pw11@test.com, Course: Default Course, Session Year ID: 1
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Student was created despite password missing special character
+
+❌ ERROR DURING TEST: Student creation should fail for password missing special character
+
+
+
+====================================================================================================
+TEST RESULTS SUMMARY
+====================================================================================================
+
+❌ ERROR: first_name has empty string - ERROR - Student creation should fail for empty first_name
+✅ COMPLETED: first_name has 1 character - SUCCESS
+✅ COMPLETED: first_name has 2 characters - SUCCESS
+✅ COMPLETED: first_name has 49 characters - SUCCESS
+✅ COMPLETED: first_name has 50 characters - SUCCESS
+❌ ERROR: first_name has 51 characters - ERROR - Student creation should fail for first_name length > 50
+❌ ERROR: first_name contains digits - ERROR - Student creation should fail when first_name contains digits
+❌ ERROR: first_name contains special characters - ERROR - Student creation should fail when first_name contains special characters
+❌ ERROR: last_name has empty string - ERROR - Student creation should fail when last_name is empty
+✅ COMPLETED: last_name has 1 character - SUCCESS
+✅ COMPLETED: last_name has 2 characters - SUCCESS
+✅ COMPLETED: last_name has 49 characters - SUCCESS
+✅ COMPLETED: last_name has 50 characters - SUCCESS
+❌ ERROR: last_name has 51 characters - ERROR - Student creation should fail for last_name length > 50
+❌ ERROR: last_name contains digits - ERROR - Student creation should fail for digits in last_name
+❌ ERROR: last_name contains special characters - ERROR - Student creation should fail for special characters in last_name
+✅ COMPLETED: user_name has empty string - ERROR
+❌ ERROR: user_name has 2 character – ERROR - Student creation should fail for username length < 3
+✅ COMPLETED: user_name has 3 characters – SUCCESS
+✅ COMPLETED: user_name has 4 characters – SUCCESS
+✅ COMPLETED: user_name has 29 characters – SUCCESS
+✅ COMPLETED: user_name has 30 characters - SUCCESS
+❌ ERROR: user_name has 31 characters - SUCCESS - Student creation should fail for username longer than 30 characters
+❌ ERROR: user_name starts with a digit - ERROR - Student creation should fail for username starting with digits
+❌ ERROR: user_name contains special characters - ERROR - Student creation should fail for username containing special characters
+❌ ERROR: user_name is duplicated - ERROR - Student creation should fail for duplicated username
+❌ ERROR: email has empty string - ERROR - Student creation should fail for empty email
+❌ ERROR: email has 7 character – ERROR - Student creation should fail for email length < 8 characters
+✅ COMPLETED: email has 8 characters – SUCCESS
+✅ COMPLETED: email has 9 characters – SUCCESS
+✅ COMPLETED: email has 49 characters – SUCCESS
+✅ COMPLETED: email has 50 characters – SUCCESS
+❌ ERROR: email has 51 characters – SUCCESS - Student creation should fail for email length > 50 characters
+❌ ERROR: email missing domain - ERROR - Student creation should fail for email missing domain
+❌ ERROR: email missing @ symbol - ERROR - Student creation should fail for email missing '@' symbol
+❌ ERROR: email contains special characters, except “@” - ERROR - Student creation should fail for email containing special characters except '@'
+❌ ERROR: email is duplicated - ERROR - Student creation should fail for duplicated email
+❌ ERROR: password has empty string - ERROR - Student creation should fail for empty password
+❌ ERROR: password has 7 character – ERROR - Student creation should fail for password length < 8
+✅ COMPLETED: password has 8 characters – SUCCESS
+✅ COMPLETED: password has 9 characters – SUCCESS
+✅ COMPLETED: password has 63 characters – SUCCESS
+✅ COMPLETED: password has 64 characters – SUCCESS
+❌ ERROR: password has 65 characters - ERROR - Student creation should fail for password length > 64
+❌ ERROR: password missing uppercase letter - ERROR - Student creation should fail for password missing uppercase letter
+❌ ERROR: password missing lowercase letter - ERROR - Student creation should fail for password missing lowercase letter
+❌ ERROR: password missing digit - ERROR - Student creation should fail for password missing digit
+❌ ERROR: password missing special characters - ERROR - Student creation should fail for password missing special character
+
+====================================================================================================
+END OF TEST REPORT

@@ -1,0 +1,1130 @@
+ERROR DETECTION TEST REPORT - COURSE - DATE: 18/05/2025 00:59:13
+####################################################################################################
+
+PURPOSE: These tests are designed to detect errors in the original software,
+         NOT to add new validations. Each test will check the actual behavior
+         of the software when faced with different input situations.
+
+####################################################################################################
+
+
+****************************************************************************************************
+
+🔍 C-ADD-NA-01: course_name has empty string - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: '' (empty string)
+  - Description: Detect errors in student management
+
+✅ Expected error caught: ❌ TEST RESULT: FAILED — Course should not have been created with empty course_name.
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 1
+
+  📝 Details:
+    - ID: 275, Name: , Created: 2025-05-17 17:59:13, Updated: 2025-05-17 17:59:13
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Course count changed unexpectedly
+  - Error: ❌ TEST RESULT: FAILED — Course should not have been created with empty course_name.
+
+
+❌ ERROR DURING TEST: Course creation should fail when course_name is empty
+
+
+****************************************************************************************************
+
+🔍 C-ADD-NA-02: course_name has 1 character - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'A' (1 character)
+  - Description: Course name too short
+
+✅ Expected error caught: ❌ TEST RESULT: FAILED — Course should not have been created with course_name of 1 character.
+
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 1
+
+  📝 Details:
+    - ID: 276, Name: A, Created: 2025-05-17 17:59:13, Updated: 2025-05-17 17:59:13
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Course count changed unexpectedly
+  - Error: ❌ TEST RESULT: FAILED — Course should not have been created with course_name of 1 character.
+
+
+❌ ERROR DURING TEST: Course creation should fail when course_name is less than 2 characters
+
+
+****************************************************************************************************
+
+🔍 C-ADD-NA-03: course_name has 2 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'AI' (2 characters)
+  - Description: Course with minimum valid name length
+
+❌ ERROR: Courses() got an unexpected keyword argument 'description'
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Could not create course with valid 2-character name
+  - Error: Courses() got an unexpected keyword argument 'description'
+
+❌ ERROR DURING TEST: Course should have been created with course_name of 2 characters
+
+
+****************************************************************************************************
+
+🔍 C-ADD-NA-04: course_name has 3 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'IT1' (3 characters)
+  - Description: Valid course name with 3 characters
+
+❌ ERROR: Courses() got an unexpected keyword argument 'description'
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Could not create course with valid 3-character name
+  - Error: Courses() got an unexpected keyword argument 'description'
+
+❌ ERROR DURING TEST: Course should have been created with course_name of 3 characters
+
+
+****************************************************************************************************
+
+🔍 C-ADD-NA-05: course_name has 49 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'Introduction to Software Quality Assurance Concepts' (51 characters)
+  - Description: Course name with 49 characters
+
+❌ ERROR: Courses() got an unexpected keyword argument 'description'
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Could not create course with valid 49-character name
+  - Error: Courses() got an unexpected keyword argument 'description'
+
+❌ ERROR DURING TEST: Course should have been created with course_name of 49 characters
+
+
+****************************************************************************************************
+
+🔍 C-ADD-NA-06: course_name has 50 characters - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'Advanced Topics in Software Testing and QA Methods' (50 characters)
+  - Description: Course name with 50 characters
+
+❌ ERROR: Courses() got an unexpected keyword argument 'description'
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Could not create course with valid 50-character name
+  - Error: Courses() got an unexpected keyword argument 'description'
+
+❌ ERROR DURING TEST: Course should have been created with course_name of 50 characters
+
+
+****************************************************************************************************
+
+🔍 C-ADD-NA-07: course_name has 51 characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'Comprehensive Guide to Software Testing Techniques' (50 characters)
+  - Description: Course name too long
+
+✅ Expected error caught: Courses() got an unexpected keyword argument 'description'
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Course was not created due to course_name being too long (51 characters)
+
+****************************************************************************************************
+
+🔍 C-ADD-NA-08: course_name contains special character - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'AI@'
+  - Description: Course name contains invalid special character
+
+✅ Expected error caught: Courses() got an unexpected keyword argument 'description'
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Course was not created due to special character in course_name
+
+****************************************************************************************************
+
+🔍 C-ADD-NA-09: course_name is duplicated - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Pre-creating course with name 'BA' to simulate duplication...
+⚠️ Failed to pre-create course: Courses() got an unexpected keyword argument 'description'
+
+❌ ERROR DURING TEST: Pre-condition failed: could not create initial course for duplication test.
+
+
+****************************************************************************************************
+
+🔍 C-ADD-ID-01: course_id has empty string - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create course with:
+  - Course name: 'Data Analysis'
+  - Course ID: '' (empty)
+  - Description: Course ID is missing
+
+✅ Expected error caught: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Course was not created due to empty course_id
+
+****************************************************************************************************
+
+🔍 C-ADD-ID-02: course_id has no digit – ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create course with:
+  - Course name: 'Data Science Basics'
+  - Course ID: 'C' (no digits)
+  - Description: course_id must follow format C + 3 digits
+
+✅ Expected error caught: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Course was not created due to invalid course_id format (no digits)
+
+****************************************************************************************************
+
+🔍 C-ADD-ID-03: course_id has 2 digits – ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create course with:
+  - Course name: 'Software Engineering Basics'
+  - Course ID: 'C12' (only 2 digits after 'C')
+  - Description: course_id must start with 'C' followed by exactly 3 digits
+
+✅ Expected error caught: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Course was not created due to invalid course_id format (only 2 digits after 'C')
+
+****************************************************************************************************
+
+🔍 C-ADD-ID-04: course_id has 3 digits – SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'Software Engineering Basics'
+  - Course ID: 'C123' (3 digits after 'C')
+  - Description: Valid course_id with 3 digits
+
+❌ Unexpected error caught: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Error: Courses() got an unexpected keyword argument 'course_id'
+
+❌ ERROR DURING TEST: Course creation should succeed when course_id has exactly 3 digits after 'C'
+
+
+****************************************************************************************************
+
+🔍 C-ADD-ID-05: course_id has 4 digits - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'Advanced Software Engineering'
+  - Course ID: 'C1234' (4 digits after 'C')
+  - Description: course_id has 4 digits which is invalid
+
+✅ Expected error caught: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Course was not created due to invalid course_id format (4 digits)
+
+****************************************************************************************************
+
+🔍 C-ADD-ID-06: course_id has non-digit characters - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'Software Engineering Basics'
+  - Course ID: 'C1A-' (contains non-digit characters)
+  - Description: course_id contains non-digit characters after 'C'
+
+✅ Expected error caught: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Course was not created due to invalid course_id with non-digit characters
+
+****************************************************************************************************
+
+🔍 C-ADD-ID-07: course_id has lowercase letter - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'Database Fundamentals'
+  - Course ID: 'c123' (contains lowercase letter)
+  - Description: course_id contains lowercase letter
+
+✅ Expected error caught: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Course was not created due to invalid course_id containing lowercase letter
+
+****************************************************************************************************
+
+🔍 C-ADD-ID-08: course_id has 3 digits are zero - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'Network Security'
+  - Course ID: 'C000' (3 zero digits)
+  - Description: course_id has 3 digits all zero
+
+✅ Expected error caught: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Course was not created due to invalid course_id 'C000'
+
+****************************************************************************************************
+
+🔍 C-ADD-ID-09: course_id has 3 digits are 9 - SUCCESS
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'Advanced Database Systems'
+  - Course ID: 'C999' (3 nine digits)
+  - Description: course_id with three 9 digits
+
+❌ Unexpected error caught: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 AFTER CREATION (After Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🔴 TEST RESULT: FAILED
+  - Error: Courses() got an unexpected keyword argument 'course_id'
+
+❌ ERROR DURING TEST: Course creation should succeed with valid course_id 'C999'
+
+
+****************************************************************************************************
+
+🔍 C-ADD-ID-10: course_id contains whitespace – ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'Database Systems'
+  - Course ID: 'C 12' (contains whitespace)
+  - Description: course_id contains whitespace
+
+✅ Expected error caught: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Course was not created due to whitespace in course_id
+
+****************************************************************************************************
+
+🔍 C-ADD-ID-11: course_id does not start with C - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Creating course with:
+  - Course name: 'Advanced Programming'
+  - Course ID: '1234' (does not start with C)
+  - Description: course_id does not start with uppercase C
+
+✅ Expected error caught: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Course was not created because course_id does not start with uppercase 'C'
+
+****************************************************************************************************
+
+🔍 C-ADD-ID-012: course_id is duplicated - ERROR
+****************************************************************************************************
+
+
+================================================================================
+
+  📊 INITIAL STATE (Initial State)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+⚠️ Setup warning: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 BEFORE CREATION (Before Creating Duplicate Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+📌 Attempting to create course with duplicated course_id:
+  - Course name: 'Sample Course'
+  - Course ID: 'C123'
+  - Description: Duplicate course_id test
+
+✅ Expected error caught: Courses() got an unexpected keyword argument 'course_id'
+
+================================================================================
+
+  📊 AFTER CREATION (After Attempting to Create Duplicate Course)
+
+  📋 Number of Courses: 0
+
+  📝 Details:
+    (No data)
+
+================================================================================
+
+
+🟢 TEST RESULT: PASSED
+  - Duplicate course_id was correctly rejected.
+
+
+====================================================================================================
+TEST RESULTS SUMMARY
+====================================================================================================
+
+❌ ERROR: course_name has empty string - ERROR - Course creation should fail when course_name is empty
+❌ ERROR: course_name has 1 characters - ERROR - Course creation should fail when course_name is less than 2 characters
+❌ ERROR: course_name has 2 characters - SUCCESS - Course should have been created with course_name of 2 characters
+❌ ERROR: course_name has 3 characters – SUCCESS - Course should have been created with course_name of 3 characters
+❌ ERROR: course_name has 49 characters – SUCCESS - Course should have been created with course_name of 49 characters
+❌ ERROR: course_name has 50 characters – SUCCESS - Course should have been created with course_name of 50 characters
+✅ COMPLETED: course_name has 51 characters  - ERROR
+✅ COMPLETED: course_name contains special character  - ERROR
+❌ ERROR: course_name is duplicated  - ERROR - Pre-condition failed: could not create initial course for duplication test.
+✅ COMPLETED: course_id has empty string - ERROR
+✅ COMPLETED: course_id has no digit – ERROR
+✅ COMPLETED: course_id has 2 digits – ERROR
+❌ ERROR: course_id has 3 digits - SUCCESS - Course creation should succeed when course_id has exactly 3 digits after 'C'
+✅ COMPLETED: course_id has 4 digits - ERROR
+✅ COMPLETED: course _id has non-digit characters
+✅ COMPLETED: course _id has lowercase letter – ERROR
+✅ COMPLETED: course _id has 3 digits are zero- ERROR
+❌ ERROR: course _id has 3 digits are 9 - SUCCESS - Course creation should succeed with valid course_id 'C999'
+✅ COMPLETED: course _id contains whitespace – ERROR
+✅ COMPLETED: course_id does not start with C - ERROR
+✅ COMPLETED: course _id is duplicated - ERROR
+
+====================================================================================================
+END OF TEST REPORT
