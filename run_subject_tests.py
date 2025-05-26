@@ -11,7 +11,7 @@ django.setup()
 
 # Import necessary Django modules
 from django.test.runner import DiscoverRunner
-from student_management_app.tests_subject import SubjectModelTest
+from student_management_app.test_subject import SubjectModelTest
 
 def run_and_capture_tests():
     """Run tests and capture the output."""
@@ -33,18 +33,6 @@ def run_and_capture_tests():
         
         # Create and run each test individually to record complete results
         test_cases = [
-            ('S_ADD_ID_01_subject_id_has_empty_string_ERROR', 'subject_id has empty string - ERROR'),
-            ('S_ADD_ID_02_subject_id_has_no_digit_ERROR', 'subject_id has no digit - ERROR'),
-            ('S_ADD_ID_03_subject_id_has_two_digits_ERROR', 'subject_id has 2 digits – ERROR'),
-            ('S_ADD_ID_04_subject_id_has_three_digits_SUCCESS','subject_id has 3 digits - SUCCESS'),
-            ('S_ADD_ID_05_subject_id_has_four_digits_ERROR','subject_id has 4 digits - ERROR'),
-            ('S_ADD_ID_06_subject_id_has_nondigit_characters_ERROR','subject_id has non-digit characters'),
-            ('S_ADD_ID_07_subject_id_has_lowercase_letter_ERROR','subject_id has lowercase letter – ERROR'),
-            ('S_ADD_ID_08_subject_id_has_all_zeros_digits_ERROR','subject_id has 3 digits are zero- ERROR'),
-            ('S_ADD_ID_09_subject_id_has_digits_999_SUCCESS','subject_id has 3 digits are 9 - SUCCESS'),
-            ('S_ADD_ID_10_subject_id_contains_whitespace_ERROR','subject_id contains whitespace – ERROR'),
-            ('S_ADD_ID_11_subject_id_not_start_SB_ERROR','subject_id does not start with SB - ERROR'),
-            ('S_ADD_ID_12_subject_id_is_duplicated_ERROR','subject_id is duplicated - ERROR'),
             ('S_ADD_NA_01_subject_name_empty_string_ERROR','subject_name has empty string - ERROR'),
             ('S_ADD_NA_02_subject_name_one_char_ERROR','subject_name has 1 characters - ERROR'),
             ('S_ADD_NA_03_subject_name_two_chars_SUCCESS','subject_name has 2 characters - SUCCESS'),

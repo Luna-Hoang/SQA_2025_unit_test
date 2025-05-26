@@ -11,7 +11,7 @@ django.setup()
 
 # Import necessary Django modules
 from django.test.runner import DiscoverRunner
-from student_management_app.tests_teacher import TeacherModelTest
+from student_management_app.test_teacher import TeacherModelTest
 
 def run_and_capture_tests():
     """Run tests and capture the output."""

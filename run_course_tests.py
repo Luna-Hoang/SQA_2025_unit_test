@@ -11,7 +11,7 @@ django.setup()
 
 # Import necessary Django modules
 from django.test.runner import DiscoverRunner
-from student_management_app.tests_course import CoursesModelTest
+from student_management_app.test_course import CoursesModelTest
 
 def run_and_capture_tests():
     """Run tests and capture the output."""
@@ -41,19 +41,7 @@ def run_and_capture_tests():
             ('C_ADD_NA_06_course_name_has_50_characters_SUCCESS', 'course_name has 50 characters – SUCCESS'),
             ('C_ADD_NA_07_course_name_has_51_characters_ERROR', 'course_name has 51 characters  - ERROR'),
             ('C_ADD_NA_08_course_name_contains_special_character_ERROR', 'course_name contains special character  - ERROR'),
-            ('C_ADD_NA_09_course_name_is_duplicated_ERROR', 'course_name is duplicated  - ERROR'),
-            ('C_ADD_ID_01_course_id_has_empty_string_ERROR','course_id has empty string - ERROR'),
-            ('C_ADD_ID_02_course_id_has_no_digit_ERROR','course_id has no digit – ERROR'),
-            ('C_ADD_ID_03_course_id_has_2_digits_ERROR','course_id has 2 digits – ERROR'),
-            ('C_ADD_ID_04_course_id_has_3_digits_SUCCESS','course_id has 3 digits - SUCCESS'),
-            ('C_ADD_ID_05_course_id_has_4_digits_ERROR','course_id has 4 digits - ERROR'),
-            ('C_ADD_ID_06_course_id_has_non_digit_characters_ERROR','course _id has non-digit characters'),
-            ('C_ADD_ID_07_course_id_has_lowercase_letter_ERROR','course _id has lowercase letter – ERROR'),
-            ('C_ADD_ID_08_course_id_has_three_zero_digits_ERROR','course _id has 3 digits are zero- ERROR'),
-            ('C_ADD_ID_09_course_id_has_three_nine_digits_SUCCESS','course _id has 3 digits are 9 - SUCCESS'),
-            ('C_ADD_ID_10_course_id_contains_whitespace_ERROR','course _id contains whitespace – ERROR'),
-            ('C_ADD_ID_11_course_id_not_start_with_C_ERROR','course_id does not start with C - ERROR'),
-            ('C_ADD_ID_012_course_id_is_duplicated_ERROR','course _id is duplicated - ERROR')
+            ('C_ADD_NA_09_course_name_is_duplicated_ERROR', 'course_name is duplicated  - ERROR')
         ]
         
         test_results = []

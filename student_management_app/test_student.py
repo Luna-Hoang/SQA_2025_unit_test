@@ -18,10 +18,6 @@ class StudentModelTest(TestCase):
     
     def setUp(self):
         """Set up test data before each method runs."""
-        # Delete all existing students and users to start with a clean database
-        Students.objects.all().delete()
-        CustomUser.objects.filter(user_type='3').delete()
-        
         # Ensure there is a Course with ID=1 (necessary for post_save signal)
         if not Courses.objects.filter(id=1).exists():
             course_id_1 = Courses.objects.create(id=1, course_name="Default Course")
@@ -81,6 +77,7 @@ class StudentModelTest(TestCase):
         print(f"\n{'='*80}\n")
 
     def STU_ADD_FN_01_first_name_empty_string_ERROR(self):
+        """STU-ADD-FN-01: first_name empty string - ERROR."""
         print("\n\n" + "*"*100)
         print("\n🔍 STU-ADD-FN-01: first_name has empty string - ERROR")
         print("*"*100 + "\n")
@@ -99,10 +96,10 @@ class StudentModelTest(TestCase):
         course_id = self.course.id
         session_year_id = self.session_year.id
 
-        pre_creation_state = self.get_db_state('Before Creating Teacher')
+        pre_creation_state = self.get_db_state('Before Creating Student')
         self.print_db_state(pre_creation_state, "BEFORE CREATION")
 
-        print("\n📌 Creating teacher with:")
+        print("\n📌 Creating student with:")
         print(f"  - Username: {username}")
         print(f"  - Email: {email}")
         print(f"  - Name: '{first_name}' {last_name}")
@@ -112,53 +109,50 @@ class StudentModelTest(TestCase):
         print(f"  - Course ID: {course_id}")
         print(f"  - Session Year ID: {session_year_id}\n")
 
-        student = None
         error_caught = False
         error_message = None
 
-        try:
-            user = CustomUser.objects.create_user(
-                username=username,
-                email=email,
-                password=password,
-                first_name=first_name,
-                last_name=last_name,
-                user_type=3  # Student
-            )
+        with transaction.atomic():
+            try:
+                user = CustomUser.objects.create_user(
+                    username=username,
+                    email=email,
+                    password=password,
+                    first_name=first_name,
+                    last_name=last_name,
+                    user_type=3  # Student
+                )
 
-            from time import sleep
-            sleep(0.1)
+                # Nếu có business logic tạo thêm student object liên kết,
+                # kiểm tra user.students có tồn tại không.
+                # Ở đây giả định có quan hệ ngược students
+                if hasattr(user, 'students'):
+                    # Nếu tạo thành công student thì fail test vì first_name rỗng không hợp lệ
+                    self.fail("Student object should not be created with empty first_name")
+            except Exception as e:
+                error_caught = True
+                error_message = str(e)
+                # transaction.atomic tự rollback khi exception được raise
+                print(f"\n❌ ERROR CREATING STUDENT: {error_message}")
 
-            if hasattr(user, 'students'):
-                print(f"❌ User has linked student object, but this should not happen for empty first_name")
-                student = user.students
-            else:
-                print(f"✅ User does not have linked student object as expected due to empty first_name")
+        post_creation_state = self.get_db_state('After Creating Student')
+        self.print_db_state(post_creation_state, "AFTER CREATION")
 
-        except Exception as e:
-            error_caught = True
-            error_message = str(e)
-            print(f"\n❌ ERROR CREATING TEACHER: {error_message}")
-            connection.rollback()
-
-        if not error_caught:
-            post_creation_state = self.get_db_state('After Creating Teacher')
-            self.print_db_state(post_creation_state, "AFTER CREATION")
-        else:
-            post_creation_state = pre_creation_state
-
-        # Đúng ra phải không tạo được student, student_count không tăng
-        if error_caught or post_creation_state['students_count'] == pre_creation_state['students_count']:
+        # Assert database không tăng số lượng students do lỗi
+        self.assertTrue(
+            error_caught or post_creation_state['students_count'] == pre_creation_state['students_count'],
+            msg="Student was created despite empty first_name"
+        )
+        if error_caught:
             print("\n🟢 TEST RESULT: PASSED")
             print("  - Student creation failed as expected due to empty first_name")
-            if error_message:
-                print(f"  - Error message: {error_message}")
+            print(f"  - Error message: {error_message}")
         else:
-            print("\n🔴 TEST RESULT: FAILED")
-            print("  - Student was created despite empty first_name")
-            self.fail("Student creation should fail for empty first_name")
+            print("\n🟢 TEST RESULT: PASSED")
+            print("  - No student object created as expected due to empty first_name")
 
-    def STU_ADD_FN_02_first_name_one_character_SUCCESS(self):
+    def test_STU_ADD_FN_02_first_name_one_character_SUCCESS(self):
+        """STU-ADD-FN-02: first_name has 1 character - SUCCESS."""
         print("\n\n" + "*"*100)
         print("\n🔍 STU-ADD-FN-02: first_name has 1 character - SUCCESS")
         print("*"*100 + "\n")
@@ -169,7 +163,7 @@ class StudentModelTest(TestCase):
         username = "teststudent2"
         email = "teststudent2@test.com"
         password = "Testpassword@123"
-        first_name = "J"  # 1 character
+        first_name = "J"
         last_name = "Doe"
         gender = "Other"
         address = "123 Test Street"
@@ -181,61 +175,40 @@ class StudentModelTest(TestCase):
         self.print_db_state(pre_creation_state, "BEFORE CREATION")
 
         print("\n📌 Creating student with:")
-        print(f"  - Username: {username}")
-        print(f"  - Email: {email}")
-        print(f"  - Name: '{first_name}' {last_name}")
-        print(f"  - Gender: {gender}")
-        print(f"  - Address: {address}")
-        print(f"  - Status: {status}")
-        print(f"  - Course ID: {course_id}")
-        print(f"  - Session Year ID: {session_year_id}\n")
+        print(f"  - First Name: '{first_name}'\n")
 
         student = None
         error_caught = False
         error_message = None
 
-        try:
-            user = CustomUser.objects.create_user(
-                username=username,
-                email=email,
-                password=password,
-                first_name=first_name,
-                last_name=last_name,
-                user_type=3  # Student
-            )
+        with transaction.atomic():
+            try:
+                user = CustomUser.objects.create_user(
+                    username=username,
+                    email=email,
+                    password=password,
+                    first_name=first_name,
+                    last_name=last_name,
+                    user_type=3
+                )
+                student = getattr(user, 'students', None)
+            except Exception as e:
+                error_caught = True
+                error_message = str(e)
+                print(f"❌ ERROR: {error_message}")
+                raise  # Để rollback tự động
 
-            from time import sleep
-            sleep(0.1)
+        post_creation_state = self.get_db_state('After Creating Student')
+        self.print_db_state(post_creation_state, "AFTER CREATION")
 
-            if hasattr(user, 'students'):
-                print(f"✅ User has successfully linked student object")
-                student = user.students
-            else:
-                print(f"❌ User does not have linked student object")
+        self.assertFalse(error_caught, msg=f"Student creation failed: {error_message}")
+        self.assertIsNotNone(student, msg="Student relation not created")
+        self.assertGreater(post_creation_state['students_count'], pre_creation_state['students_count'])
 
-        except Exception as e:
-            error_caught = True
-            error_message = str(e)
-            print(f"\n❌ ERROR CREATING STUDENT: {error_message}")
-            connection.rollback()
+        print("\n🟢 TEST RESULT: PASSED - 1-character first_name created successfully.")
 
-        if not error_caught:
-            post_creation_state = self.get_db_state('After Creating Student')
-            self.print_db_state(post_creation_state, "AFTER CREATION")
-        else:
-            post_creation_state = pre_creation_state
-
-        if not error_caught and student and post_creation_state['students_count'] > pre_creation_state['students_count']:
-            print("\n🟢 TEST RESULT: PASSED")
-            print("  - Student was successfully created with 1-character first_name")
-        else:
-            print("\n🔴 TEST RESULT: FAILED")
-            print("  - Student creation failed despite valid 1-character first_name")
-            if error_message:
-                print(f"  - Error: {error_message}")
-            self.fail("Student creation should succeed for 1-character first_name")
-
-    def STU_ADD_FN_03_first_name_two_characters_SUCCESS(self): 
+    def test_STU_ADD_FN_03_first_name_two_characters_SUCCESS(self):
+        """STU-ADD-FN-03: first_name has 2 characters - SUCCESS."""
         print("\n\n" + "*"*100)
         print("\n🔍 STU-ADD-FN-03: first_name has 2 characters - SUCCESS")
         print("*"*100 + "\n")
@@ -246,7 +219,7 @@ class StudentModelTest(TestCase):
         username = "teststudent3"
         email = "teststudent3@test.com"
         password = "Testpassword@123"
-        first_name = "Jo"  # 2 characters
+        first_name = "Jo"
         last_name = "Doe"
         gender = "Other"
         address = "123 Test Street"
@@ -258,61 +231,40 @@ class StudentModelTest(TestCase):
         self.print_db_state(pre_creation_state, "BEFORE CREATION")
 
         print("\n📌 Creating student with:")
-        print(f"  - Username: {username}")
-        print(f"  - Email: {email}")
-        print(f"  - Name: '{first_name}' {last_name}")
-        print(f"  - Gender: {gender}")
-        print(f"  - Address: {address}")
-        print(f"  - Status: {status}")
-        print(f"  - Course ID: {course_id}")
-        print(f"  - Session Year ID: {session_year_id}\n")
+        print(f"  - First Name: '{first_name}'\n")
 
         student = None
         error_caught = False
         error_message = None
 
-        try:
-            user = CustomUser.objects.create_user(
-                username=username,
-                email=email,
-                password=password,
-                first_name=first_name,
-                last_name=last_name,
-                user_type=3  # Student
-            )
+        with transaction.atomic():
+            try:
+                user = CustomUser.objects.create_user(
+                    username=username,
+                    email=email,
+                    password=password,
+                    first_name=first_name,
+                    last_name=last_name,
+                    user_type=3
+                )
+                student = getattr(user, 'students', None)
+            except Exception as e:
+                error_caught = True
+                error_message = str(e)
+                print(f"❌ ERROR: {error_message}")
+                raise
 
-            from time import sleep
-            sleep(0.1)
+        post_creation_state = self.get_db_state('After Creating Student')
+        self.print_db_state(post_creation_state, "AFTER CREATION")
 
-            if hasattr(user, 'students'):
-                print(f"✅ User has successfully linked student object")
-                student = user.students
-            else:
-                print(f"❌ User does not have linked student object")
+        self.assertFalse(error_caught, msg=f"Student creation failed: {error_message}")
+        self.assertIsNotNone(student, msg="Student relation not created")
+        self.assertGreater(post_creation_state['students_count'], pre_creation_state['students_count'])
 
-        except Exception as e:
-            error_caught = True
-            error_message = str(e)
-            print(f"\n❌ ERROR CREATING STUDENT: {error_message}")
-            connection.rollback()
+        print("\n🟢 TEST RESULT: PASSED - 2-character first_name created successfully.")
 
-        if not error_caught:
-            post_creation_state = self.get_db_state('After Creating Student')
-            self.print_db_state(post_creation_state, "AFTER CREATION")
-        else:
-            post_creation_state = pre_creation_state
-
-        if not error_caught and student and post_creation_state['students_count'] > pre_creation_state['students_count']:
-            print("\n🟢 TEST RESULT: PASSED")
-            print("  - Student was successfully created with 2-character first_name")
-        else:
-            print("\n🔴 TEST RESULT: FAILED")
-            print("  - Student creation failed despite valid 2-character first_name")
-            if error_message:
-                print(f"  - Error: {error_message}")
-            self.fail("Student creation should succeed for 2-character first_name")
-
-    def STU_ADD_FN_04_first_name_49_characters_SUCCESS(self): 
+    def test_STU_ADD_FN_04_first_name_49_characters_SUCCESS(self):
+        """STU-ADD-FN-04: first_name has 49 characters - SUCCESS."""
         print("\n\n" + "*"*100)
         print("\n🔍 STU-ADD-FN-04: first_name has 49 characters - SUCCESS")
         print("*"*100 + "\n")
@@ -323,7 +275,7 @@ class StudentModelTest(TestCase):
         username = "teststudent4"
         email = "teststudent4@test.com"
         password = "Testpassword@123"
-        first_name = "Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"  # 49 characters
+        first_name = "J" * 49
         last_name = "Doe"
         gender = "Other"
         address = "123 Test Street"
@@ -334,62 +286,40 @@ class StudentModelTest(TestCase):
         pre_creation_state = self.get_db_state('Before Creating Student')
         self.print_db_state(pre_creation_state, "BEFORE CREATION")
 
-        print("\n📌 Creating student with:")
-        print(f"  - Username: {username}")
-        print(f"  - Email: {email}")
-        print(f"  - Name: '{first_name}' {last_name}")
-        print(f"  - Gender: {gender}")
-        print(f"  - Address: {address}")
-        print(f"  - Status: {status}")
-        print(f"  - Course ID: {course_id}")
-        print(f"  - Session Year ID: {session_year_id}\n")
+        print(f"\n📌 Creating student with first_name of length {len(first_name)}")
 
         student = None
         error_caught = False
         error_message = None
 
-        try:
-            user = CustomUser.objects.create_user(
-                username=username,
-                email=email,
-                password=password,
-                first_name=first_name,
-                last_name=last_name,
-                user_type=3  # Student
-            )
+        with transaction.atomic():
+            try:
+                user = CustomUser.objects.create_user(
+                    username=username,
+                    email=email,
+                    password=password,
+                    first_name=first_name,
+                    last_name=last_name,
+                    user_type=3
+                )
+                student = getattr(user, 'students', None)
+            except Exception as e:
+                error_caught = True
+                error_message = str(e)
+                print(f"❌ ERROR: {error_message}")
+                raise
 
-            from time import sleep
-            sleep(0.1)
+        post_creation_state = self.get_db_state('After Creating Student')
+        self.print_db_state(post_creation_state, "AFTER CREATION")
 
-            if hasattr(user, 'students'):
-                print(f"✅ User has successfully linked student object")
-                student = user.students
-            else:
-                print(f"❌ User does not have linked student object")
+        self.assertFalse(error_caught)
+        self.assertIsNotNone(student)
+        self.assertGreater(post_creation_state['students_count'], pre_creation_state['students_count'])
 
-        except Exception as e:
-            error_caught = True
-            error_message = str(e)
-            print(f"\n❌ ERROR CREATING STUDENT: {error_message}")
-            connection.rollback()
+        print("\n🟢 TEST RESULT: PASSED - 49-character first_name created successfully.")
 
-        if not error_caught:
-            post_creation_state = self.get_db_state('After Creating Student')
-            self.print_db_state(post_creation_state, "AFTER CREATION")
-        else:
-            post_creation_state = pre_creation_state
-
-        if not error_caught and student and post_creation_state['students_count'] > pre_creation_state['students_count']:
-            print("\n🟢 TEST RESULT: PASSED")
-            print("  - Student was successfully created with 49-character first_name")
-        else:
-            print("\n🔴 TEST RESULT: FAILED")
-            print("  - Student creation failed despite valid 49-character first_name")
-            if error_message:
-                print(f"  - Error: {error_message}")
-            self.fail("Student creation should succeed for 49-character first_name")
-
-    def STU_ADD_FN_05_first_name_50_characters_SUCCESS(self): 
+    def test_STU_ADD_FN_05_first_name_50_characters_SUCCESS(self):
+        """STU-ADD-FN-05: first_name has 50 characters - SUCCESS."""
         print("\n\n" + "*"*100)
         print("\n🔍 STU-ADD-FN-05: first_name has 50 characters - SUCCESS")
         print("*"*100 + "\n")
@@ -400,7 +330,7 @@ class StudentModelTest(TestCase):
         username = "teststudent5"
         email = "teststudent5@test.com"
         password = "Testpassword@123"
-        first_name = "Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"  # 50 characters
+        first_name = "J" * 50
         last_name = "Doe"
         gender = "Other"
         address = "123 Test Street"
@@ -411,60 +341,37 @@ class StudentModelTest(TestCase):
         pre_creation_state = self.get_db_state('Before Creating Student')
         self.print_db_state(pre_creation_state, "BEFORE CREATION")
 
-        print("\n📌 Creating student with:")
-        print(f"  - Username: {username}")
-        print(f"  - Email: {email}")
-        print(f"  - Name: '{first_name}' {last_name}")
-        print(f"  - Gender: {gender}")
-        print(f"  - Address: {address}")
-        print(f"  - Status: {status}")
-        print(f"  - Course ID: {course_id}")
-        print(f"  - Session Year ID: {session_year_id}\n")
+        print(f"\n📌 Creating student with first_name of length {len(first_name)}")
 
         student = None
         error_caught = False
         error_message = None
 
-        try:
-            user = CustomUser.objects.create_user(
-                username=username,
-                email=email,
-                password=password,
-                first_name=first_name,
-                last_name=last_name,
-                user_type=3  # Student
-            )
+        with transaction.atomic():
+            try:
+                user = CustomUser.objects.create_user(
+                    username=username,
+                    email=email,
+                    password=password,
+                    first_name=first_name,
+                    last_name=last_name,
+                    user_type=3
+                )
+                student = getattr(user, 'students', None)
+            except Exception as e:
+                error_caught = True
+                error_message = str(e)
+                print(f"❌ ERROR: {error_message}")
+                raise
 
-            from time import sleep
-            sleep(0.1)
+        post_creation_state = self.get_db_state('After Creating Student')
+        self.print_db_state(post_creation_state, "AFTER CREATION")
 
-            if hasattr(user, 'students'):
-                print(f"✅ User has successfully linked student object")
-                student = user.students
-            else:
-                print(f"❌ User does not have linked student object")
+        self.assertFalse(error_caught)
+        self.assertIsNotNone(student)
+        self.assertGreater(post_creation_state['students_count'], pre_creation_state['students_count'])
 
-        except Exception as e:
-            error_caught = True
-            error_message = str(e)
-            print(f"\n❌ ERROR CREATING STUDENT: {error_message}")
-            connection.rollback()
-
-        if not error_caught:
-            post_creation_state = self.get_db_state('After Creating Student')
-            self.print_db_state(post_creation_state, "AFTER CREATION")
-        else:
-            post_creation_state = pre_creation_state
-
-        if not error_caught and student and post_creation_state['students_count'] > pre_creation_state['students_count']:
-            print("\n🟢 TEST RESULT: PASSED")
-            print("  - Student was successfully created with 50-character first_name")
-        else:
-            print("\n🔴 TEST RESULT: FAILED")
-            print("  - Student creation failed despite valid 50-character first_name")
-            if error_message:
-                print(f"  - Error: {error_message}")
-            self.fail("Student creation should succeed for 50-character first_name")
+        print("\n🟢 TEST RESULT: PASSED - 50-character first_name created successfully.")
 
     def STU_ADD_FN_06_first_name_51_characters_ERROR(self): 
         print("\n\n" + "*"*100)
@@ -2009,15 +1916,28 @@ class StudentModelTest(TestCase):
             print("  - Student was created despite username containing special characters")
             self.fail("Student creation should fail for username containing special characters")
 
+    @transaction.atomic
     def STU_ADD_UN_10_username_is_duplicated_ERROR(self):
-        print("\n\n" + "*"*100)
-        print("\n🔍 STU-ADD-UN-10: user_name is duplicated - ERROR")
-        print("*"*100 + "\n")
+        """STU-ADD-UN-10: username is duplicated - ERROR."""
+        print("\n\n" + "*" * 100)
+        print("\n🔍 STU-ADD-UN-10: username is duplicated - ERROR")
+        print("*" * 100 + "\n")
 
-        initial_state = self.get_db_state('Initial State')
-        self.print_db_state(initial_state, "INITIAL STATE")
+        savepoint = transaction.savepoint()
 
-        username = "john"  # giả sử username này đã tồn tại trong db
+        # Tạo trước một user với username trùng để mô phỏng dữ liệu đã tồn tại
+        duplicated_username = "john"
+        CustomUser.objects.create_user(
+            username=duplicated_username,
+            email="existing_user@test.com",
+            password="ExistingPassword@123",
+            first_name="Existing",
+            last_name="User",
+            user_type=3
+        )
+
+        # Thông tin để thử tạo student mới với username đã trùng
+        username = duplicated_username
         email = "teststudent_un10@test.com"
         password = "Testpassword@123"
         first_name = "John"
@@ -2028,22 +1948,14 @@ class StudentModelTest(TestCase):
         course_id = self.course.id
         session_year_id = self.session_year.id
 
-        pre_creation_state = self.get_db_state('Before Creating Student')
-        self.print_db_state(pre_creation_state, "BEFORE CREATION")
+        students_before = Students.objects.count()
+        users_before = CustomUser.objects.count()
 
-        print("\n📌 Creating student with:")
-        print(f"  - Username: '{username}'")
-        print(f"  - Email: {email}")
-        print(f"  - Name: {first_name} {last_name}")
-        print(f"  - Gender: {gender}")
-        print(f"  - Address: {address}")
-        print(f"  - Status: {status}")
-        print(f"  - Course ID: {course_id}")
-        print(f"  - Session Year ID: {session_year_id}\n")
+        print(f"\n📌 Attempting to create student with duplicated username: '{username}'")
 
-        student = None
         error_caught = False
         error_message = None
+        user = None
 
         try:
             user = CustomUser.objects.create_user(
@@ -2052,40 +1964,38 @@ class StudentModelTest(TestCase):
                 password=password,
                 first_name=first_name,
                 last_name=last_name,
-                user_type=3  # Student
+                user_type=3
             )
 
-            from time import sleep
-            sleep(0.1)
-
-            if hasattr(user, 'students'):
-                print("❌ User has linked student object but username is duplicated, nên không hợp lệ")
-                student = user.students
-            else:
-                print("✅ User không có linked student object như mong đợi với username duplicated")
+            Students.objects.create(
+                admin=user,
+                gender=gender,
+                address=address,
+                course_id_id=course_id,
+                session_year_id_id=session_year_id,
+                status=status
+            )
+            print("❌ ERROR: Student was created despite duplicated username!")
 
         except Exception as e:
             error_caught = True
             error_message = str(e)
-            print(f"\n✅ Expected ERROR caught: {error_message}")
-            connection.rollback()
+            print(f"✅ Expected ERROR caught: {error_message}")
+            transaction.savepoint_rollback(savepoint)
 
-        if not error_caught:
-            post_creation_state = self.get_db_state('After Creating Student')
-            self.print_db_state(post_creation_state, "AFTER CREATION")
-        else:
-            post_creation_state = pre_creation_state
+        students_after = Students.objects.count()
+        users_after = CustomUser.objects.count()
 
-        # Student không được tạo vì username đã tồn tại
-        if error_caught or post_creation_state['students_count'] == pre_creation_state['students_count']:
-            print("\n🟢 TEST RESULT: PASSED")
-            print("  - Student creation failed as expected due to duplicated username")
-            if error_message:
-                print(f"  - Error message: {error_message}")
-        else:
-            print("\n🔴 TEST RESULT: FAILED")
-            print("  - Student được tạo dù username bị trùng")
-            self.fail("Student creation should fail for duplicated username")
+        print(f"\n📊 ASSERTING no student/user was created...")
+        print(f"  - Students before: {students_before}, after: {students_after}")
+        print(f"  - Users before: {users_before}, after: {users_after}")
+
+        self.assertTrue(error_caught, "An error should have been raised due to duplicated username")
+        self.assertEqual(students_after, students_before, "No new student should be created")
+        self.assertEqual(users_after, users_before, "No new user should be created")
+
+        print("\n🟢 TEST RESULT: PASSED - Creation failed as expected due to duplicated username.")
+
 
     def STU_ADD_EM_01_email_empty_string_ERROR(self):
         print("\n\n" + "*"*100)
@@ -2862,16 +2772,37 @@ class StudentModelTest(TestCase):
             print("  - Student was created despite invalid email format")
             self.fail("Student creation should fail for email containing special characters except '@'")
 
-    def STU_ADD_EM_11_email_is_duplicated_ERROR(self):
-        print("\n\n" + "*"*100)
+    @transaction.atomic
+    def test_STU_ADD_EM_11_email_is_duplicated_ERROR(self):
+        """STU-ADD-EM-11: email is duplicated - ERROR."""
+        print("\n\n" + "*" * 100)
         print("\n🔍 STU-ADD-EM-11: email is duplicated - ERROR")
-        print("*"*100 + "\n")
+        print("*" * 100 + "\n")
 
-        initial_state = self.get_db_state('Initial State')
+        initial_state = self.get_db_state("Initial State")
         self.print_db_state(initial_state, "INITIAL STATE")
 
+        duplicated_email = "john@test.com"
+        existing_username = "existing_user_john"
+
+        # Tạo sẵn một user để dùng email bị trùng
+        try:
+            CustomUser.objects.create_user(
+                username=existing_username,
+                email=duplicated_email,
+                password="SomePassword@123",
+                first_name="Existing",
+                last_name="User",
+                user_type=3
+            )
+        except Exception as e:
+            print(f"⚠️ Skipped existing user creation (possibly already exists): {e}")
+
+        pre_creation_state = self.get_db_state("Before Creating Student")
+        self.print_db_state(pre_creation_state, "BEFORE CREATION")
+
         username = "teststudent_em11"
-        email = "john@test.com"  # Email duplicated - phải tồn tại sẵn trong db
+        email = duplicated_email
         password = "Testpassword@123"
         first_name = "John"
         last_name = "Doe"
@@ -2881,36 +2812,12 @@ class StudentModelTest(TestCase):
         course_id = self.course.id
         session_year_id = self.session_year.id
 
-        # Giả sử email 'john@test.com' đã tồn tại, tạo trước 1 user với email này
-        try:
-            existing_user = CustomUser.objects.create_user(
-                username="existing_user_john",
-                email=email,
-                password="SomePassword@123",
-                first_name="Existing",
-                last_name="User",
-                user_type=3
-            )
-        except Exception:
-            # Nếu user đã tồn tại thì bỏ qua
-            pass
+        print(f"\n📌 Creating student with duplicated email: '{email}'\n")
 
-        pre_creation_state = self.get_db_state('Before Creating Student')
-        self.print_db_state(pre_creation_state, "BEFORE CREATION")
-
-        print("\n📌 Creating student with duplicated email:")
-        print(f"  - Username: {username}")
-        print(f"  - Email: '{email}'")
-        print(f"  - Name: {first_name} {last_name}")
-        print(f"  - Gender: {gender}")
-        print(f"  - Address: {address}")
-        print(f"  - Status: {status}")
-        print(f"  - Course ID: {course_id}")
-        print(f"  - Session Year ID: {session_year_id}\n")
-
-        student = None
         error_caught = False
         error_message = None
+
+        savepoint = transaction.savepoint()
 
         try:
             user = CustomUser.objects.create_user(
@@ -2921,37 +2828,41 @@ class StudentModelTest(TestCase):
                 last_name=last_name,
                 user_type=3
             )
-
-            from time import sleep
-            sleep(0.1)
-
-            if hasattr(user, 'students'):
-                print("❌ User has linked student object but this should NOT happen for duplicated email")
-                student = user.students
-            else:
-                print("✅ User does not have linked student object as expected due to duplicated email")
-
+            # Nếu user vẫn được tạo, thử liên kết với Student
+            Students.objects.create(
+                admin=user,
+                gender=gender,
+                address=address,
+                status=status,
+                course_id=course_id,
+                session_year_id=session_year_id
+            )
         except Exception as e:
             error_caught = True
             error_message = str(e)
             print(f"\n✅ Expected ERROR caught: {error_message}")
-            connection.rollback()
+            transaction.savepoint_rollback(savepoint)
 
-        if not error_caught:
-            post_creation_state = self.get_db_state('After Creating Student')
-            self.print_db_state(post_creation_state, "AFTER CREATION")
-        else:
-            post_creation_state = pre_creation_state
+        post_creation_state = self.get_db_state("After Creating Student")
+        self.print_db_state(post_creation_state, "AFTER CREATION")
 
-        if error_caught or post_creation_state['students_count'] == pre_creation_state['students_count']:
-            print("\n🟢 TEST RESULT: PASSED")
-            print("  - Student creation failed as expected due to duplicated email")
-            if error_message:
-                print(f"  - Error message: {error_message}")
-        else:
-            print("\n🔴 TEST RESULT: FAILED")
-            print("  - Student was created despite duplicated email")
-            self.fail("Student creation should fail for duplicated email")
+        # ✅ Kiểm tra assert
+        self.assertTrue(error_caught, "Expected an error due to duplicated email, but none was raised.")
+        self.assertEqual(
+            post_creation_state['students_count'],
+            pre_creation_state['students_count'],
+            "Student count should not change when email is duplicated."
+        )
+        self.assertEqual(
+            post_creation_state['users_count'],
+            pre_creation_state['users_count'],
+            "User count should not change when email is duplicated."
+        )
+
+        print("\n🟢 TEST RESULT: PASSED - Student creation failed as expected due to duplicated email.")
+        if error_message:
+            print(f"  - Error message: {error_message}")
+
 
     def STU_ADD_PW_01_password_empty_string_ERROR(self):
         print("\n\n" + "*"*100)
